@@ -19,6 +19,7 @@
 
     <!-- Custom Theme CSS -->
     <link href="css/grayscale.css" rel="stylesheet">
+    <link href="css/timeline.css" rel="stylesheet">
 
 </head>
 
@@ -46,7 +47,7 @@
                         <a href="#about">About</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#download">Download</a>
+                        <a href="#projects">Projects</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#contact">Contact</a>
@@ -95,13 +96,78 @@
         </div>
     </section>
 
-    <section id="download" class="content-section text-center">
-        <div class="download-section">
+    <section id="projects" class="content-section text-center">
+        <div class="projects-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Download Grayscale</h2>
-                    <p>You can download Grayscale for free on the download page at Start Bootstrap. You can also get the source code directly from GitHub if you prefer. Additionally, Grayscale is the first Start Bootstrap theme to come with a LESS file for easy color customization!</p>
-                    <a href="http://startbootstrap.com/grayscale" class="btn btn-default btn-lg">Visit Download Page</a>
+                    <h2>Projects</h2>
+                    <ul class="timeline">
+                        <!-- 2013 -->
+                        <li class="year first">2013</li>
+                        <li class='event'>
+                            <h3>DequeNET</h3>
+                            <img src="img/deque.png" alt="DequeNET" />
+                            <p>
+                                A concurrent lock-free deque (double-ended queue) implementation in C#. Push/Pop/Peek operations in constant time O(1).
+                            </p>
+                            <p>
+                                <a href="https://github.com/dcastro/DequeNET" class="btn btn-default">
+                                    <i class="fa fa-github fa-fw"></i>
+                                    <span class="network-name">GitHub</span>
+                                </a>
+                            </p>
+                        </li>
+                        <li class='event' href="#">
+                            <h3>MementoContainer</h3>
+                            <img src="img/memento.jpg" alt="Memento Container" />
+                            <p>
+                                An alternative approach to the Memento design pattern. The container takes a snapshot of your objects' state by using reflection, so that you can easily rollback when recovering from errors or implementing an "undo" mechanism.
+                            </p>
+                            <p>
+                                <a href="https://github.com/dcastro/MementoContainer" class="btn btn-default">
+                                    <i class="fa fa-github fa-fw"></i>
+                                    <span class="network-name">GitHub</span>
+                                </a>
+                            </p>
+                        </li>
+                        <!-- 2012 -->
+                        <li class="year">2012</li>
+                        <li class='event' href="#">
+                            <h3>MetroTasks</h3>
+                            <img src="img/metrotasks.png" alt="MetroTasks" />
+                            <p>
+                                Metro Tasks is a productivity application for Windows 8 / Windows RT thats helps you keep track of your todo's.
+                                The app features synchronization with Google Tasks, type to search, tile and lock screen updates.
+                            </p>
+                            <p>
+                                <a href="http://apps.microsoft.com/windows/en-GB/app/metrotasks/480f3e5b-76da-4313-a0b7-feabe70729de" class="btn btn-default">
+                                    <i class="fa fa-windows fa-fw"></i>
+                                    <span class="network-name">Windows Store</span>
+                                </a>
+                            </p>
+                        </li>
+
+                        <li class='event' href="#">
+                            <h3>Master's Thesis</h3>
+
+                            <img src="img/thesis.png" alt="Master's Thesis" />
+                            <p>
+                                Entitled "Improving pedestrian navigation for older adults and persons with mild dementia through landmarks" and written at
+                                <a href="http://www.fraunhofer.pt/en/" target="_blank">Fraunhofer Portugal</a>.
+                                Developed the navigation module for <a href="http://alznav.projects.fraunhofer.pt/" target="_blank">AlzNav</a>, using both turn-by-turn and landmark-based approaches
+                            </p>
+                            <p>
+                                <a href="assets/thesis.pdf" class="btn btn-default">
+                                    <i class="fa fa-download fa-fw"></i>
+                                    <span class="network-name">PDF</span>
+                                </a>
+                                <a href="assets/thesis-summary.pdf" class="btn btn-default">
+                                    <i class="fa fa-download fa-fw"></i>
+                                    <span class="network-name">2 Page Summary</span>
+                                </a>
+                            </p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

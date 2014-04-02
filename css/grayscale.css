@@ -47,6 +47,15 @@ a:focus {
 .light {
   font-weight: 400;
 }
+.event h3 {
+  text-transform: none;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.event p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
 .navbar {
   margin-bottom: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -214,16 +223,9 @@ a:focus {
 .content-section {
   padding-top: 100px;
 }
-.download-section {
+.projects-section {
   width: 100%;
   padding: 50px 0;
-  color: #ffffff;
-  background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
-  background-color: #000000;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
 }
 .contact-section {
   padding: 100px 0;
@@ -237,7 +239,7 @@ a:focus {
   .content-section {
     padding-top: 200px;
   }
-  .download-section {
+  .projects-section {
     padding: 100px 0;
   }
   .contact-section {
