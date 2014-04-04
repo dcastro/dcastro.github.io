@@ -6,7 +6,7 @@ $primary: #28c3ab;
 //v1
 .timeline, .timeline.v1/*used in the tutorial, don't bother*/ {
   margin: 0px auto;
-  max-width: 700px;
+  max-width: 850px;
   overflow:hidden;
   height: auto;
   position: relative;
@@ -16,7 +16,7 @@ $primary: #28c3ab;
   /*thanks to
      https://twitter.com/JacoKoster
   */
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEElEQVQIW2NMTEz8z8gABAAPKwIlXWq1kgAAAABJRU5ErkJggg==);
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAAECAYAAACk7+45AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41LjEwMPRyoQAAABhJREFUGFdj0Di8+j8IIxj//0MwlPGfAQCDwxZJCNGJgAAAAABJRU5ErkJggg==);
   background-repeat:repeat-y;
   background-position:50% 0;
   
@@ -30,16 +30,27 @@ $primary: #28c3ab;
   */ 
   *,*:after,&:after,*:before,&:before{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
 
+
+  @media all and (max-width: 600px) {
+    padding: 0 20px;
+  }
+
   .year {
-    background: $bg-entry;
-    font-size: 2em;
+    background: $primary;
+    font-size: 1em;
     max-width: 4em; 
     clear: both; 
     margin: 1em auto;
-    color: white;
-    border-radius: 30% / 100%;
+    color: black;    
+    border-radius: 50%;
     text-align: center;
     margin-top: 50px;
+    margin-bottom: 70px;
+
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 4;
     
     &:first-of-type {
       margin-top: 0 !important;
@@ -64,12 +75,12 @@ $primary: #28c3ab;
     float: right;
     clear: right; 
     width: 45%;
-    margin: 10px 2.5%;
+    margin: 10px 2.5% 50px 2.5%;
 
     border-radius: 5px;
     list-style-type: none;
     display: block;
-    padding: .4em;
+    padding: .9em;
     background-color: transparent;
     z-index: 15;
     
@@ -81,6 +92,10 @@ $primary: #28c3ab;
     -ms-transition: background .15s linear;
     -o-transition: background .15s linear;
     transition: background .15s linear;
+
+    p:last-of-type {
+      margin-bottom: 0px;
+    }
     
     &.featured {
       width: 95% !important;
@@ -90,8 +105,9 @@ $primary: #28c3ab;
     }
     
     @media all and (max-width: 600px) {
-      width: 85%;
-      background-color:rgba(0,0,0,0.8);
+      width: 100%;
+      margin: 50px 0;
+      background-color:rgba(0,0,0,0.75);
     }    
     
     &.offset-first {
@@ -99,7 +115,6 @@ $primary: #28c3ab;
     }
     
     img {
-      margin-top: 10px;
       margin-bottom: 10px;
       max-width: 100%;
       border-radius: 5px;
@@ -133,9 +148,6 @@ $primary: #28c3ab;
   time{
     display: block;font-weight: bold;
   }
-
-
-
 
   /*v2*/
   &.v2{
