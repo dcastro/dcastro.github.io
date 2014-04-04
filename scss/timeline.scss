@@ -1,5 +1,6 @@
 $text-color: rgb(77, 77, 77);
 $bg-entry: rgb(80,80,80);
+$primary: #28c3ab;
 
 
 //v1
@@ -31,7 +32,7 @@ $bg-entry: rgb(80,80,80);
 
   .year {
     background: $bg-entry;
-    font-size: 3em;
+    font-size: 2em;
     max-width: 4em; 
     clear: both; 
     margin: 1em auto;
@@ -64,17 +65,15 @@ $bg-entry: rgb(80,80,80);
     clear: right; 
     width: 45%;
     margin: 10px 2.5%;
-    
-    
+
     border-radius: 5px;
     list-style-type: none;
     display: block;
     padding: .4em;
-    background: white;
+    background-color: transparent;
     z-index: 15;
     
-    color: $text-color;
-    border: 1px solid lighten($bg-entry,50%);
+    border: 1px solid $primary;
     text-decoration: none;
 
     -webkit-transition: background .15s linear;
@@ -92,6 +91,7 @@ $bg-entry: rgb(80,80,80);
     
     @media all and (max-width: 600px) {
       width: 85%;
+      background-color:rgba(0,0,0,0.8);
     }    
     
     &.offset-first {
@@ -100,15 +100,9 @@ $bg-entry: rgb(80,80,80);
     
     img {
       margin-top: 10px;
+      margin-bottom: 10px;
       max-width: 100%;
-    }
-
-    &:hover {
-      background: lighten($bg-entry,65%);
-
-      &:after {
-        background: $bg-entry;
-      }
+      border-radius: 5px;
     }
     
     &:nth-of-type(2n) {
