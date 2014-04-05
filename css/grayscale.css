@@ -21,6 +21,12 @@ h6 {
   font-weight: 700;
   letter-spacing: 1px;
 }
+h3 {
+  text-transform: none;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #28c3ab;
+}
 p {
   margin: 0 0 25px;
   font-size: 18px;
@@ -46,16 +52,6 @@ a:focus {
 }
 .light {
   font-weight: 400;
-}
-.event h3 {
-  text-transform: none;
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #28c3ab;
-}
-.event p {
-  font-size: 16px;
-  margin-bottom: 10px;
 }
 .navbar {
   margin-bottom: 0;
@@ -224,11 +220,6 @@ a:focus {
 .content-section {
   padding-top: 100px;
 }
-#projects,
-#experience {
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
 .contact-section {
   padding: 100px 0;
 }
@@ -258,8 +249,23 @@ a:focus {
     margin-top: 250px;
   }
 }
+#projects,
+#experience {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+#projects p,
+#experience p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
 #projects .row > div {
   border: 1px solid #28c3ab;
+}
+#projects .row > div img {
+  margin-bottom: 10px;
+  max-width: 100%;
+  border-radius: 5px;
 }
 .btn {
   text-transform: uppercase;
