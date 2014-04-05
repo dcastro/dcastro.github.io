@@ -2,6 +2,8 @@ $text-color: rgb(77, 77, 77);
 $bg-entry: rgb(80,80,80);
 $primary: #28c3ab;
 
+$spacing: 15px;
+
 
 //v1
 .timeline, .timeline.v1/*used in the tutorial, don't bother*/ {
@@ -80,7 +82,7 @@ $primary: #28c3ab;
     border-radius: 5px;
     list-style-type: none;
     display: block;
-    padding: .9em;
+    padding: $spacing;
     background-color: transparent;
     z-index: 15;
     
@@ -93,8 +95,8 @@ $primary: #28c3ab;
     -o-transition: background .15s linear;
     transition: background .15s linear;
 
-    p:last-of-type {
-      margin-bottom: 0px;
+    p:last-child {
+      margin-bottom: 0px !important;
     }
     
     &.featured {
@@ -112,12 +114,6 @@ $primary: #28c3ab;
     
     &.offset-first {
        margin-top: -1.5em;
-    }
-    
-    img {
-      margin-bottom: 10px;
-      max-width: 100%;
-      border-radius: 5px;
     }
     
     &:nth-of-type(2n) {

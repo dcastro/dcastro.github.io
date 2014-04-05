@@ -3,6 +3,10 @@
 @primary: #28c3ab;
 @dark: #000;
 @light: #fff;
+@grey: #95a5a6;
+
+@spacing: 15px;
+
 
 // LESS
 
@@ -25,6 +29,7 @@ h1,
 h2,
 h3,
 h4,
+h3,
 h5,
 h6 {
     margin: 0 0 35px;
@@ -37,7 +42,6 @@ h6 {
 h3 {
     text-transform: none;
     font-size: 18px;
-    margin-bottom: 10px;
     color: @primary
 }
 
@@ -45,6 +49,10 @@ p {
     margin: 0 0 25px;
     font-size: 18px;
     line-height: 1.5;
+}
+
+small {
+    color: @grey;
 }
 
 @media(min-width:767px) {
@@ -315,24 +323,41 @@ a:focus {
 #projects, #experience {
     padding-top: 100px;
     padding-bottom: 100px;
+    
+    img {
+      margin-bottom: @spacing;
+      max-width: 100%;
+      border-radius: 5px;
+    }
 
     p {
         font-size: 16px;
-        margin-bottom: 10px;
+        margin-bottom: @spacing;
+    }
+
+    h3 {
+        margin-bottom: @spacing;
     }
 }
 
 // projects grid
 #projects .row > div {
-    border: 1px solid @primary;
+    padding: @spacing;
 
-    img {
-      margin-bottom: 10px;
-      max-width: 100%;
-      border-radius: 5px;
+    h3 {
+        border-bottom: 1px solid  @primary;
+        padding-bottom: @spacing;
+    }
+
+    .description {
+        margin-bottom: 10px;
+    }
+
+    .links {
+        margin-top: @spacing;
+        margin-bottom: @spacing;
     }
 }
-
  // Buttons 
 
  .btn {
