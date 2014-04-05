@@ -284,9 +284,9 @@ a:focus {
     padding-top: 100px;
 }
 
-.projects-section {
-    width: 100%;
-    padding: 100px 0;
+#projects, #experience {
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .contact-section {
@@ -301,11 +301,17 @@ a:focus {
 
 @media(min-width:767px) {
     .content-section {
-        padding: 200px 0;
+        padding-top: 250px;
     }
 
-    .projects-section {
-        padding: 75px 0 100px 0;
+    #about {
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+
+    #projects, #experience {
+        padding-top: 75px;
+        padding-bottom: 100px;
     }
 
     .contact-section {
@@ -316,6 +322,11 @@ a:focus {
         height: 400px;
         margin-top: 250px;
     }
+}
+
+// projects grid
+#projects .row > div {
+    border: 1px solid @primary;
 }
 
  // Buttons 
