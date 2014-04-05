@@ -32,11 +32,6 @@ $spacing: 15px;
   */ 
   *,*:after,&:after,*:before,&:before{-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
 
-
-  @media all and (max-width: 600px) {
-    padding: 0 20px;
-  }
-
   .year {
     background: $primary;
     font-size: 1em;

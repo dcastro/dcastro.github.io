@@ -24,7 +24,7 @@ h6 {
 }
 h3 {
   text-transform: none;
-  font-size: 18px;
+  font-size: 22px;
   color: #28c3ab;
 }
 p {
@@ -224,7 +224,8 @@ a:focus {
   padding-top: 100px;
 }
 .contact-section {
-  padding: 100px 0;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 #map {
   width: 100%;
@@ -260,7 +261,7 @@ a:focus {
 #projects img,
 #experience img {
   margin-bottom: 15px;
-  max-width: 100%;
+  max-width: 80%;
   border-radius: 5px;
 }
 #projects p,
@@ -273,7 +274,9 @@ a:focus {
   margin-bottom: 15px;
 }
 #projects .row > div {
-  padding: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 15px;
 }
 #projects .row > div h3 {
   border-bottom: 1px solid #28c3ab;

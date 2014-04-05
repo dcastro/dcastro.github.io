@@ -34,13 +34,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-@media all and (max-width: 600px) {
-  /* line 9, timeline.scss */
-  .timeline, .timeline.v1 {
-    padding: 0 20px;
-  }
-}
-/* line 40, timeline.scss */
+/* line 35, timeline.scss */
 .timeline .year, .timeline.v1 .year {
   background: #28c3ab;
   font-size: 1em;
@@ -60,15 +54,15 @@
     thanks to Lukas Knuth ( https://github.com/christian-fei/Timeline.css/issues/1 )
   */
 }
-/* line 57, timeline.scss */
+/* line 52, timeline.scss */
 .timeline .year:first-of-type, .timeline.v1 .year:first-of-type {
   margin-top: 0 !important;
 }
-/* line 64, timeline.scss */
+/* line 59, timeline.scss */
 .timeline .year + .event, .timeline.v1 .year + .event {
   margin-top: -1.5em;
 }
-/* line 74, timeline.scss */
+/* line 69, timeline.scss */
 .timeline .event, .timeline.v1 .event {
   position: relative;
   text-align: center;
@@ -90,43 +84,43 @@
   -o-transition: background .15s linear;
   transition: background .15s linear;
 }
-/* line 98, timeline.scss */
+/* line 93, timeline.scss */
 .timeline .event p:last-child, .timeline.v1 .event p:last-child {
   margin-bottom: 0px !important;
 }
-/* line 102, timeline.scss */
+/* line 97, timeline.scss */
 .timeline .event.featured, .timeline.v1 .event.featured {
   width: 95% !important;
 }
-/* line 104, timeline.scss */
+/* line 99, timeline.scss */
 .timeline .event.featured:after, .timeline .event.featured:before, .timeline.v1 .event.featured:after, .timeline.v1 .event.featured:before {
   display: none;
 }
 @media all and (max-width: 600px) {
-  /* line 74, timeline.scss */
+  /* line 69, timeline.scss */
   .timeline .event, .timeline.v1 .event {
     width: 100%;
     margin: 50px 0;
     background-color: rgba(0, 0, 0, 0.75);
   }
 }
-/* line 115, timeline.scss */
+/* line 110, timeline.scss */
 .timeline .event.offset-first, .timeline.v1 .event.offset-first {
   margin-top: -1.5em;
 }
-/* line 119, timeline.scss */
+/* line 114, timeline.scss */
 .timeline .event:nth-of-type(2n), .timeline.v1 .event:nth-of-type(2n) {
   float: left;
   clear: left;
 }
-/* line 122, timeline.scss */
+/* line 117, timeline.scss */
 .timeline .event:nth-of-type(2n):after, .timeline.v1 .event:nth-of-type(2n):after {
   right: -5%;
   /* reset the standard declaration I defined before*/
   left: auto;
 }
 @media all and (min-width: 650px) {
-  /* line 129, timeline.scss */
+  /* line 124, timeline.scss */
   .timeline .event:after, .timeline.v1 .event:after {
     display: block;
     content: ' ';
@@ -140,18 +134,18 @@
     border: 2px solid white;
   }
 }
-/* line 144, timeline.scss */
+/* line 139, timeline.scss */
 .timeline time, .timeline.v1 time {
   display: block;
   font-weight: bold;
 }
-/* line 150, timeline.scss */
+/* line 145, timeline.scss */
 .timeline.v2 .year, .timeline.v1.v2 .year {
   background: white;
   color: #505050;
   border: 2px solid #505050;
 }
-/* line 156, timeline.scss */
+/* line 151, timeline.scss */
 .timeline.v2 .event, .timeline.v1.v2 .event {
   border: none;
   background: #FAFAFA;
