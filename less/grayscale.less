@@ -279,37 +279,31 @@ a:focus {
 
  // Content Sections 
 
-.content-section {
+#about {
     padding-top: 100px;
 }
 
-.contact-section {
+#contact {
     padding-top: 150px;
     padding-bottom: 150px;
 }
 
-#map {
-    width: 100%;
-    height: 200px;
-    margin-top: 100px;
+#projects, #experience {
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 @media(min-width:767px) {
-    .content-section {
-        padding-top: 250px;
-    }
-
     #about {
         padding-top: 150px;
         padding-bottom: 200px;
     }
 
     #projects, #experience {
-        padding-top: 75px;
         padding-bottom: 200px;
     }
 
-    .contact-section {
+    #contact {
         padding-top: 200px;
         padding-bottom: 400px;
     }
@@ -317,28 +311,6 @@ a:focus {
     #map {
         height: 400px;
         margin-top: 250px;
-    }
-}
-
-
-//projects & experience 
-#projects, #experience {
-    padding-top: 100px;
-    padding-bottom: 100px;
-    
-    img {
-      margin-bottom: @spacing;
-      max-width: 80%;
-      border-radius: 5px;
-    }
-
-    p {
-        font-size: 16px;
-        margin-bottom: @spacing;
-    }
-
-    h3 {
-        margin-bottom: @spacing;
     }
 }
 
@@ -350,6 +322,8 @@ a:focus {
     }
 
     p {
+        font-size: 16px;
+        margin-bottom: @spacing;
         margin-top: @spacing;
     }
 
@@ -368,6 +342,17 @@ a:focus {
     h3 {
         border-bottom: 1px solid  @primary;
         padding-bottom: @spacing;
+        margin-bottom: @spacing;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    img {
+        margin-bottom: @spacing;
+        max-width: 80%;
+        border-radius: 5px;
     }
 
     .description {
