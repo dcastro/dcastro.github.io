@@ -74,7 +74,7 @@
   list-style-type: none;
   display: block;
   padding: 15px;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.85);
   z-index: 15;
   border: 1px solid #28c3ab;
   text-decoration: none;
@@ -90,7 +90,7 @@
 }
 /* line 97, timeline.scss */
 .timeline .event.featured, .timeline.v1 .event.featured {
-  width: 95% !important;
+  width: 95%;
 }
 /* line 99, timeline.scss */
 .timeline .event.featured:after, .timeline .event.featured:before, .timeline.v1 .event.featured:after, .timeline.v1 .event.featured:before {
@@ -99,28 +99,27 @@
 @media all and (max-width: 600px) {
   /* line 69, timeline.scss */
   .timeline .event, .timeline.v1 .event {
-    width: 100%;
+    width: 100% !important;
     margin: 50px 0;
-    background-color: rgba(0, 0, 0, 0.75);
   }
 }
-/* line 110, timeline.scss */
+/* line 109, timeline.scss */
 .timeline .event.offset-first, .timeline.v1 .event.offset-first {
   margin-top: -1.5em;
 }
-/* line 114, timeline.scss */
+/* line 113, timeline.scss */
 .timeline .event:nth-of-type(2n), .timeline.v1 .event:nth-of-type(2n) {
   float: left;
   clear: left;
 }
-/* line 117, timeline.scss */
+/* line 116, timeline.scss */
 .timeline .event:nth-of-type(2n):after, .timeline.v1 .event:nth-of-type(2n):after {
   right: -5%;
   /* reset the standard declaration I defined before*/
   left: auto;
 }
 @media all and (min-width: 650px) {
-  /* line 124, timeline.scss */
+  /* line 123, timeline.scss */
   .timeline .event:after, .timeline.v1 .event:after {
     display: block;
     content: ' ';
@@ -134,18 +133,18 @@
     border: 2px solid white;
   }
 }
-/* line 139, timeline.scss */
+/* line 138, timeline.scss */
 .timeline time, .timeline.v1 time {
   display: block;
   font-weight: bold;
 }
-/* line 145, timeline.scss */
+/* line 144, timeline.scss */
 .timeline.v2 .year, .timeline.v1.v2 .year {
   background: white;
   color: #505050;
   border: 2px solid #505050;
 }
-/* line 151, timeline.scss */
+/* line 150, timeline.scss */
 .timeline.v2 .event, .timeline.v1.v2 .event {
   border: none;
   background: #FAFAFA;
