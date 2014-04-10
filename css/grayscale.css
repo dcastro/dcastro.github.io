@@ -279,7 +279,7 @@ a:focus {
 }
 #projects .row > div img {
   margin-bottom: 15px;
-  max-width: 80%;
+  width: 80%;
   border-radius: 5px;
 }
 #projects .row > div .description {
