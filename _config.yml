@@ -14,7 +14,7 @@ tagline:          'A Jekyll theme'
 description:      'A stream of thoughts'
 url:              http://www.diogocastro.com
 baseurl:          /
-blogurl:          blog/
+blogurl:          /blog/
 
 author:
   name:           'Mark Otto'
