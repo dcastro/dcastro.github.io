@@ -364,15 +364,15 @@ tbody tr:nth-child(odd) th {
 .related-posts h3 {
   margin-top: 0;
 }
-.related-posts li small {
+.related-posts li small, .archive small {
   font-size: 75%;
   color: #999;
 }
-.related-posts li a:hover {
+.related-posts li a:hover, .archive a:hover {
   color: #268bd2;
   text-decoration: none;
 }
-.related-posts li a:hover small {
+.related-posts li a:hover small, .archive a:hover small {
   color: inherit;
 }
 

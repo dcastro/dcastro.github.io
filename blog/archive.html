@@ -3,7 +3,7 @@ layout: page
 title: Archive
 ---
 
-<div class="posts">
+<section class="archive">
   {% for post in site.posts %}
     {% assign currentdate = post.date | date: "%Y" %}
     {% if currentdate != date %}
@@ -12,14 +12,13 @@ title: Archive
     {% endif %}
 
     <article>
-      <span class="post-date">{{ post.date | date: "%b %d" }}</span>
-      ~>
-      <span class="post-title">
+      <span>
         <a href="{{ post.url }}">
-          {{ post.title }}
+        {{ post.title }}
+        <small class="post-date">{{ post.date | date: "%b %d" }}</small>
         </a>
       </span>
     </article>
 
   {% endfor %}
-</div>
+</section>
