@@ -2,26 +2,23 @@
 markdown:         kramdown
 highlighter:      rouge
 
-gems:             [jekyll-paginate, jekyll-gist]
+gems:             [jekyll-gist]
 
 # Permalinks
 permalink:        pretty
-# relative_permalinks: true
 
 # Setup
 title:            dcastro blog
-tagline:          'A Jekyll theme'
 description:      'A stream of thoughts'
 url:              http://www.diogocastro.com
 baseurl:          /
 blogurl:          /blog/
+atomurl:          /blog/atom.xml
 
 author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
+  name:           'Diogo Castro'
+  url:            http://www.diogocastro.com
+  email:          dc@diogocastro.com
 
 # Custom vars
-version:          2.1.0
 
-github:
-  repo:           https://github.com/poole/hyde
