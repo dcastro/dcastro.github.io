@@ -7,6 +7,36 @@ layout: default
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="post-date">{{ page.date | date_to_string }}</p>
     {{ content }}
+  </section>
 
+  <section id="comments">
+    <h2>Comments</h2>
+    <div>
+      Want to leave a comment? Visit <a href="{{site.github.issue_url | replace: '<issue-id>', page.issueId}}"> this post's issue page on GitHub</a>.
+    </div>
   </section>
 </article>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}public/js/comments.js"></script>
+<link rel="stylesheet" href="{{ site.baseurl }}public/css/comments.css">
+
+<script>
+  $.ajax("{{ site.github.comments_url | replace: '<issue-id>', page.issueId }}", {
+    headers: {Accept: "application/vnd.github.v3.html+json"},
+    dataType: "json",
+    success: function(msg){
+      loadComments(msg);
+    }
+  });
+
+  function loadComments(data) {
+    for(var i = 0; i < data.length; i++) {
+      var comment = data[i];
+      $("#comments").append(createComment(comment));
+    }
+  }
+</script>
+
+

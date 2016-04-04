@@ -2,7 +2,7 @@
 markdown:         kramdown
 highlighter:      rouge
 
-gems:             [jekyll-gist]
+gems:             [jekyll-coffeescript]
 
 # Permalinks
 permalink:        pretty
@@ -21,4 +21,9 @@ author:
   email:          dc@diogocastro.com
 
 # Custom vars
+
+github:
+  comments_url:    https://api.github.com/repos/dcastro/dcastro.github.io/issues/<issue-id>/comments?per_page=100
+  issue_url:       https://github.com/dcastro/dcastro.github.io/issues/<issue-id>
+
 

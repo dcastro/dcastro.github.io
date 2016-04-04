@@ -1,0 +1,54 @@
+---
+---
+
+$grey: #515151;
+$light-grey: #ddd;
+
+@mixin clearfix() {
+    &:after {
+       content: " ";
+       display: block; 
+       clear: both;
+    }
+}
+
+#comments {
+    .comment {
+        border: 1px solid $light-grey;
+        border-radius: 3px;
+        margin: 10px 0;
+
+        header, .comment-content {
+            padding: 10px 15px;
+        }
+
+        header {
+            @include clearfix();
+
+            background-color: #fafafa;
+            border-bottom: 1px solid #eee;
+
+            .avatar {
+                float: left;
+                height: 48px;
+                width: 48px;
+                margin: 0 10px 0 0;
+            }
+
+            .author, .timestamp {
+                display: block;
+                font-size: 0.8rem;
+            }
+
+            .author { font-weight: bold; }
+            .timestamp { color: #767676; }
+
+            a {
+                text-decoration: none;
+                color: $grey;
+
+                &:hover { text-decoration: underline; }
+            }
+        }
+    }
+}
