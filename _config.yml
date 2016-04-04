@@ -9,7 +9,6 @@ permalink:        pretty
 
 # Setup
 title:            dcastro blog
-description:      'A stream of thoughts'
 url:              http://www.diogocastro.com
 baseurl:          /
 blogurl:          /blog/
