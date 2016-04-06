@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'jekyll-coffeescript'
-gem 'github-pages', group: :jekyll_plugins
-
+group :jekyll_plugins do
+   gem 'jekyll-coffeescript'
+   gem 'github-pages'
+ end
+ 
