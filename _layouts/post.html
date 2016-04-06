@@ -28,6 +28,9 @@ layout: default
     dataType: "json",
     success: function(msg){
       loadComments(msg);
+    },
+    error: function(d) {
+      console.log(d);
     }
   });
 
