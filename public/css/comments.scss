@@ -1,9 +1,6 @@
 ---
 ---
 
-$grey: #515151;
-$light-grey: #ddd;
-
 @mixin clearfix() {
     &:after {
        content: " ";
@@ -14,7 +11,7 @@ $light-grey: #ddd;
 
 #comments {
     .comment {
-        border: 1px solid $light-grey;
+        border: 1px solid #ddd;
         border-radius: 3px;
         margin: 10px 0;
 
@@ -45,7 +42,7 @@ $light-grey: #ddd;
 
             a {
                 text-decoration: none;
-                color: $grey;
+                color: #515151;
 
                 &:hover { text-decoration: underline; }
             }
