@@ -34,17 +34,6 @@
 html {
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
 }
-@media (min-width: 48em) {
-  html {
-    font-size: 16px;
-  }
-}
-@media (min-width: 58em) {
-  html {
-    font-size: 20px;
-  }
-}
-
 
 /*
  * Sidebar
@@ -69,6 +58,12 @@ html {
     text-align: left;
   }
 }
+@media (min-width: 64em) {
+  .sidebar {
+    padding: 2.5rem 1.25rem;
+    width: 22.5rem;
+  }
+}
 
 /* Sidebar links */
 .sidebar a {
@@ -80,6 +75,12 @@ html {
   color: #fff;
   margin-top: 0;
   font-size: 3.25rem;
+}
+
+@media (min-width: 64em) {
+  .sidebar-about h1 {
+    font-size: 4rem;
+  }
 }
 
 /* Sidebar nav */
@@ -98,6 +99,10 @@ a.sidebar-nav-item:focus {
   font-weight: bold;
 }
 
+@media (min-width: 64em) {
+  .sidebar-nav-item { font-size: 1.25rem; }
+}
+
 /* Sticky sidebar
  *
  * Add the `sidebar-sticky` class to the sidebar's container to affix it the
@@ -113,6 +118,13 @@ a.sidebar-nav-item:focus {
   }
 }
 
+@media (min-width: 64em) {
+  .sidebar-sticky {
+    right:  1.25rem;
+    bottom: 1.25rem;
+    left:   1.25rem;
+  }
+}
 
 /* Container
  *
@@ -135,8 +147,11 @@ a.sidebar-nav-item:focus {
 
 @media (min-width: 64em) {
   .content {
-    margin-left: 22rem;
-    margin-right: 4rem;
+    padding-top:    5rem;
+    padding-bottom: 5rem;
+    max-width: 47.5rem;
+    margin-left: 27.5rem;
+    margin-right: 5rem;
   }
 }
 

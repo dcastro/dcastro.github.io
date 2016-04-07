@@ -52,11 +52,6 @@ html {
   font-size: 16px;
   line-height: 1.5;
 }
-@media (min-width: 38em) {
-  html {
-    font-size: 20px;
-  }
-}
 
 body {
   color: #515151;
@@ -101,6 +96,10 @@ h3 {
 h4, h5, h6 {
   margin-top: 1rem;
   font-size: 1rem;
+}
+
+@media (min-width: 64em) {
+  h1 { font-size: 2.5rem; }
 }
 
 /* Body text */
@@ -290,6 +289,13 @@ tbody tr:nth-child(odd) th {
   margin-right: auto;
 }
 
+@media (min-width: 64em) {
+  .container {
+    max-width: 47.5rem;
+    padding-left:  1.25rem;
+    padding-right: 1.25rem;
+  }
+}
 
 /*
  * Masthead
