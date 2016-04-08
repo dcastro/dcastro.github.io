@@ -19,8 +19,8 @@ layout: default
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js"></script>
-<script type="text/javascript" src="{{ site.baseurl }}public/js/comments.js"></script>
-<link rel="stylesheet" href="{{ site.baseurl }}public/css/comments.css">
+<script type="text/javascript" src="{{ site.baseurl }}js/comments.js"></script>
+<link rel="stylesheet" href="{{ site.baseurl }}css/comments.css">
 
 <script>
   $.ajax("{{ site.github.comments_url | replace: '<issue-id>', page.issueId }}", {
