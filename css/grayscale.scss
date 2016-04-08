@@ -1,11 +1,14 @@
+---
+---
+
 // Variables
 
-@primary: #28c3ab;
-@dark: #000;
-@light: #fff;
-@grey: #95a5a6;
+$primary: #28c3ab;
+$dark: #000;
+$light: #fff;
+$grey: #95a5a6;
 
-@spacing: 15px;
+$spacing: 15px;
 
 
 // LESS
@@ -14,8 +17,8 @@ body {
     width: 100%;
     height: 100%;
     font-family: "Lora","Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: @light;
-    background-color: @dark;
+    color: $light;
+    background-color: $dark;
 }
 
 html {
@@ -42,7 +45,7 @@ h6 {
 h3 {
     text-transform: none;
     font-size: 22px;
-    color: @primary
+    color: $primary
 }
 
 p {
@@ -52,7 +55,7 @@ p {
 }
 
 small {
-    color: @grey;
+    color: $grey;
 }
 
 @media(min-width:767px) {
@@ -64,7 +67,7 @@ small {
 }
 
 a {
-    color: @primary;
+    color: $primary;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
@@ -73,7 +76,7 @@ a {
 a:hover,
 a:focus {
     text-decoration: none;
-    color: darken(@primary, 20%);
+    color: darken($primary, 20%);
 }
 
 .light {
@@ -87,7 +90,7 @@ a:focus {
     border-bottom: 1px solid rgba(255,255,255,0.3);
     text-transform: uppercase;
     font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: @dark;
+    background-color: $dark;
 }
 
 .navbar-brand {
@@ -99,7 +102,7 @@ a:focus {
 }
 
 .navbar-custom a {
-    color: @light;
+    color: $light;
 }
 
 .navbar-custom .nav li a {
@@ -118,7 +121,7 @@ a:focus {
 .navbar-toggle {
     padding: 4px 6px;
     font-size: 16px;
-    color: @light;
+    color: $light;
 }
 
 .navbar-toggle:focus,
@@ -139,7 +142,7 @@ a:focus {
 
     .top-nav-collapse {
         padding: 0;
-        background-color: @dark;
+        background-color: $dark;
     }
 
     .navbar-custom.top-nav-collapse {
@@ -155,10 +158,10 @@ a:focus {
     height: auto;
     padding: 100px 0;
     text-align: center;
-    color: @light;
+    color: $light;
     background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
     background-attachment: fixed;
-    background-color: @dark;
+    background-color: $dark;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -208,10 +211,10 @@ a:focus {
     height: 70px;
     margin-top: 15px;
     padding: 7px 16px;
-    border: 2px solid @light;
+    border: 2px solid $light;
     border-radius: 35px;
     font-size: 40px;
-    color: @light;
+    color: $light;
     background: transparent;
     -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
@@ -221,7 +224,7 @@ a:focus {
 .btn-circle:hover,
 .btn-circle:focus {
     outline: none;
-    color: @light;
+    color: $light;
     background: rgba(255,255,255,0.1);
 }
 
@@ -244,7 +247,7 @@ a:focus {
 }
 
 @-webkit-keyframes pulse {    
-    0 {
+    0% {
         -webkit-transform: scale(1);
         transform: scale(1);
     }
@@ -261,7 +264,7 @@ a:focus {
 }
 
 @-moz-keyframes pulse {    
-    0 {
+    0% {
         -moz-transform: scale(1);
         transform: scale(1);
     }
@@ -318,31 +321,31 @@ a:focus {
 .timeline .event {
     h4, h5 {
         margin-bottom: 5px;
-        color: @primary;
+        color: $primary;
     }
 
     p {
         font-size: 16px;
-        margin-bottom: @spacing;
-        margin-top: @spacing;
+        margin-bottom: $spacing;
+        margin-top: $spacing;
     }
 
     .date {
-        color: @grey;
-        margin-bottom: @spacing;
+        color: $grey;
+        margin-bottom: $spacing;
     }
 }
 
 // projects grid
 #projects .row > div {
-    padding-right: @spacing;
-    padding-left: @spacing;
-    padding-bottom: @spacing;
+    padding-right: $spacing;
+    padding-left: $spacing;
+    padding-bottom: $spacing;
 
     h3 {
-        border-bottom: 1px solid  @primary;
-        padding-bottom: @spacing;
-        margin-bottom: @spacing;
+        border-bottom: 1px solid  $primary;
+        padding-bottom: $spacing;
+        margin-bottom: $spacing;
     }
 
     p {
@@ -350,7 +353,7 @@ a:focus {
     }
 
     img {
-        margin-bottom: @spacing;
+        margin-bottom: $spacing;
         width: 80%;
         border-radius: 5px;
     }
@@ -360,8 +363,8 @@ a:focus {
     }
 
     .links {
-        margin-top: @spacing;
-        margin-bottom: @spacing;
+        margin-top: $spacing;
+        margin-bottom: $spacing;
     }
 }
  // Buttons 
@@ -376,17 +379,17 @@ a:focus {
 }
 
 .btn-default {
-    border: 1px solid @primary;
-    color: @primary;
+    border: 1px solid $primary;
+    color: $primary;
     background-color: transparent;
 }
 
 .btn-default:hover,
 .btn-default:focus {
-    border: 1px solid @primary;
+    border: 1px solid $primary;
     outline: none;
-    color: @dark;
-    background-color: @primary;
+    color: $dark;
+    background-color: $primary;
 }
 
 .btn-huge {

@@ -1,1 +1,0 @@
-sass --watch timeline.scss:../css/timeline.css --style expanded --line-numbers
