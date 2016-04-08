@@ -19,10 +19,11 @@ author:
   url:            http://www.diogocastro.com
   email:          dc@diogocastro.com
 
+sass:
+  style:          compressed
+
 # Custom vars
 
 github:
   comments_url:    https://api.github.com/repos/dcastro/dcastro.github.io/issues/<issue-id>/comments?per_page=100
   issue_url:       https://github.com/dcastro/dcastro.github.io/issues/<issue-id>
-
-
