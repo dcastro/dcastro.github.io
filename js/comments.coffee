@@ -17,7 +17,7 @@
                     #{comment.user.login}
                 </a> 
                 <a class="timestamp" href="#{comment.html_url}">
-                    <time datetime="#{comment.created_at}" is="relative-time" title="#{dateTooltip}">#{displayDate}</time> 
+                    <time datetime="#{comment.created_at}" title="#{dateTooltip}">#{displayDate}</time> 
                 </a>  
             </header>
             <section class="comment-content">  

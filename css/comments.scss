@@ -16,7 +16,12 @@
         margin: 10px 0;
 
         header, .comment-content {
-            padding: 10px 15px;
+            padding: 15px;
+        }
+
+        .comment-content {
+            &> *:first-child { margin-top: 0 !important; }
+            &> *:last-child { margin-bottom: 0 !important; }
         }
 
         header {
