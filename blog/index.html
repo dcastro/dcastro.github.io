@@ -12,7 +12,7 @@ title: Recent
       </a>
     </h1>
 
-    <p class="post-date">{{ post.date | date_to_string }}</p>
+    <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%d %b %Y' }}</time> 
 
     {{ post.content }}
   </div>

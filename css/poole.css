@@ -348,7 +348,8 @@ tbody tr:nth-child(odd) th {
 }
 
 /* Meta data line below post title */
-.post-date {
+.post time {
+  display: block;
   margin-top: -.5rem;
   margin-bottom: 1rem;
   color: #9a9a9a;
@@ -371,14 +372,19 @@ tbody tr:nth-child(odd) th {
   font-size: 75%;
   color: #999;
 }
-.related-posts li a:hover, .archive a:hover {
+.related-posts li a:hover {
   color: #268bd2;
   text-decoration: none;
 }
-.related-posts li a:hover small, .archive a:hover small {
+.related-posts li a:hover small {
   color: inherit;
 }
 
+/* Archive */
+.archive time {
+  font-size: 0.9rem;
+  color: #9a9a9a;
+}
 
 /*
  * Pagination

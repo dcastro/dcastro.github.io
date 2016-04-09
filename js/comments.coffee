@@ -33,6 +33,6 @@ formatDate = (date) ->
     if now.diff(date, 'days') < 24
         date.fromNow()
     else if now.year() == date.year()
-        date.format("MMM D")
-    else date.format("MMM D, YYYY")
+        date.format("D MMM")
+    else date.format("D MMM YYYY")
 
