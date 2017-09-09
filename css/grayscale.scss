@@ -317,25 +317,6 @@ a:focus {
     }
 }
 
-// timeline
-.timeline .event {
-    h4, h5 {
-        margin-bottom: 5px;
-        color: $primary;
-    }
-
-    p {
-        font-size: 16px;
-        margin-bottom: $spacing;
-        margin-top: $spacing;
-    }
-
-    .date {
-        color: $grey;
-        margin-bottom: $spacing;
-    }
-}
-
 // projects grid
 #projects .row > div {
     padding-right: $spacing;
