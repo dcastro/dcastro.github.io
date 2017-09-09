@@ -28,6 +28,16 @@
  * Themes
  */
 
+@font-face {
+  font-family: 'FiraCode';
+  src:
+    local('Fira Code'),
+    local('Fira-Code'),
+    local('FiraCode'),
+    url('https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/woff2/FiraCode-Regular.woff2')  format('woff2'),
+    url('https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/woff/FiraCode-Regular.woff')    format('woff'),
+    url('https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/ttf/FiraCode-Regular.ttf')      format('truetype');
+}
 
 /*
  * Body resets
@@ -149,7 +159,7 @@ abbr[title] {
 /* Code */
 code,
 pre {
-  font-family: "Menlo", "Monaco", "Consolas", "Inconsolata", "Courier New", monospace;
+  font-family: "FiraCode", "Menlo", "Monaco", "Consolas", "Inconsolata", "Courier New", monospace;
 }
 code {
   padding: .25em .5em;
