@@ -18,22 +18,23 @@ Nowadays, it's common knowledge that `null` is a common source of headaches, due
 * Forcing you to [defensively null check every single argument][prob-aspnet] (especially when writing a library), and [test it][prob-aspnet-tests],
 * Causing [ambiguity][prob-guava] when used to simultaneously express two things, such as `map.get(key)` returning `null` to express a missing entry in a map *or* an existing entry with no value.
 
-It's even reponsible for [a bug in Java's own type system][type system bug]!
+It's even responsible for [a bug in Java's own type system][type system bug]!
 
 > Well, amazingly enough, it turns out null pointers don’t just cause bugs in programs, they cause bugs in type systems too!
 > [...] But unlike most null-pointer bugs, this one took 12 years to discover.
 >
 > \- Ross Tate
 
-Today, I won't bother going into those issues which have already been thouroughly debated.
+Today, I won't bother going into those issues which have already been thoroughly debated.
 Instead, I'll take a step back and discuss why `null` inhibits correctness and hinders one's ability to reason about code.
 
 ## Correctness
 
 The point of having a type system is to have it verify the correctness of our code, to have it proof that certain properties of our system hold.
-In order to do that, we embed as many rules as possible in it, we tell it what is legal and what isn't. Our job is not only to model a given domain and to make legal states representable, but also to [make illegal states unrepresentable][illegal-states].
+In order to do that, we embed as many rules as possible in it, we tell it what is legal and what isn't.
+Our job is not only to model a given domain and to make legal states representable but also to [make illegal states unrepresentable][illegal-states].
 
-And we do that by carefully choosing and modeling our data types.
+And we do that by carefully choosing and modelling our data types.
 
 This is why you don't use a `double` to represent a person's age, or a string whose content is expected to be numeric - you use an integer. Or even better, a [natural number][nat type].
 
@@ -49,8 +50,8 @@ Making every type nullable by default goes blatantly against this goal. It assum
 
 Not only is that assumption wrong, but most languages don't even have a built-in way of opting out of nullability! In C#, barring value types, you can't declare something to be non-nullable. There's no non-nullable `string`!
 
-This imposes a limit on how expressive we can be. There are strictly less things you can tell the compiler about the domain you're modeling.
-Ergo, there are strictly less ways in which the compiler can help you not shoot yourself in the foot.
+This imposes a limit on how expressive we can be. There are strictly fewer things you can tell the compiler about the domain you're modelling.
+Ergo, there are strictly fewer ways in which the compiler can help you not shoot yourself in the foot.
 
 ## Reasoning
 
@@ -147,7 +148,7 @@ It's also been added to Java in its eighth release ([though][java optional 1] [w
 There's a *very* good [port for C#][option-csharp] as well, and I'm willing to bet you can find one for whatever your language of choice is.
 
 Others have chosen a more *ad hoc* solution by adding special syntax to the language.
-In [Swift][swift optional] and [Kotlin][kotlin null], types are not nullable by default, and nullable types are explicitly labeled with a question mark, e.g. `String?`.
+In [Swift][swift optional] and [Kotlin][kotlin null], types are not nullable by default, and nullable types are explicitly labelled with a question mark, e.g. `String?`.
 There's also a [proposal][csharp proposal] to add something similar to C#'s reference types.
 
 However, retrofitting non-nullability into a language has its thorns.
