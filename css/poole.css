@@ -447,6 +447,11 @@ a.pagination-item:hover {
   }
 }
 
+.post a {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
 code {
   white-space: pre;
 }
