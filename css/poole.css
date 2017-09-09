@@ -447,6 +447,16 @@ a.pagination-item:hover {
   }
 }
 
+/*
+ * MathJax
+ */
+/* 
+.MathJax_Display {
+  overflow: hidden;
+  overflow-x: auto;
+}
+ */
+
 .post a {
   overflow-wrap: break-word;
   word-wrap: break-word;
