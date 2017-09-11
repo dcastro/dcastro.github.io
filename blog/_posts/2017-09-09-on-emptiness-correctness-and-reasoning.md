@@ -38,7 +38,7 @@ And we do that by carefully choosing and modelling our data types.
 
 This is why you don't use a `double` to represent a person's age, or a string whose content is expected to be numeric - you use an integer. Or even better, a [natural number][nat type].
 
-We might even use a non-empty list type ([`NonEmpty t`][non-empty-hs] in Haskell, [`NonEmpty f t`][non-empty-ps] in Purescript, or [`NonEmptyList[t]`][non-empty-scalaz] in Scalaz) to represent a list that is guaranteed to have at least one element, such as the set of stars that make up a constellation.
+We might even use a non-empty list type ([`NonEmptyList[T]`][non-empty-scalaz] in Scalaz, [`NonEmpty t`][non-empty-hs] in Haskell, or [`NonEmpty f t`][non-empty-ps] in PureScript) to represent a list that is guaranteed to have at least one element, such as the set of stars that make up a constellation.
 A function that takes a `NonEmptyList t` *cannot* be passed a possibly empty `List t` - we have made an illegal state unrepresentable!
 
 <!-- markdownlint-disable MD033 -->
@@ -143,7 +143,7 @@ By capturing the notion of nullability as a proper type, we can now express prec
 Furthermore, since `t` and `Maybe t` are now distinct types, if a function `f` were to add "empty boxes" to the input list, it would have to be typed as `f: List t -> List (Maybe t)`. And if it were to simply not return a list at all, it would be typed as `f: List t -> Maybe (List t)`.
 Those functions would themselves generate their own sets of free theorems, and we'd be able to safely **reason** about them, just as we would about any other polymorphic function.
 
-Many programming languages have adopted this approach: Haskell, Scala, Purescript, Elm, F#, OCaml, Rust, to name a few.
+Many programming languages have adopted this approach: Haskell, Scala, PureScript, Elm, F#, OCaml, Rust, to name a few.
 It's also been added to Java in its eighth release ([though][java optional 1] [with][java optional 2] [questionable][java optional 3] [success][java optional 4]).
 There's a *very* good [port for C#][option-csharp] as well, and I'm willing to bet you can find one for whatever your language of choice is.
 

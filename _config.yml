@@ -11,7 +11,7 @@ gems:             [jekyll-coffeescript]
 permalink:        pretty
 
 # Setup
-title:            dcastro blog
+title:            dcastro
 url:              http://www.diogocastro.com
 blogurl:          /blog/
 atomurl:          /blog/atom.xml
