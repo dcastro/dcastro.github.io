@@ -137,7 +137,7 @@ The solution is, of course, to lift this problem to the type level. If nullabili
 
 The most common way of lifting nullability is to simply introduce a polymorphic type `Option[T]`/`Optional<T>`/`Maybe t`.
 I won't go into too much detail here, because there are plenty of great resources about it out there already, but the gist of it is that an instance of, say, `Maybe String` can either be a `Just "hello"` (think of it as a box containing a value `"hello"`) or `Nothing` (an empty box).
-Its interface forces you to unwrap the box to find out if there's something inside and to handle both cases, usually through pattern matching or a reduce/fold/catamorphism. You can't handle just *one* case.
+Its interface forces you to unwrap the box to find out if there's something inside and to handle both cases, usually through pattern matching or a reduce/fold function. You can't handle just *one* case.
 
 By capturing the notion of nullability as a proper type, we can now express precisely whether something is optional or not, and have the type checker ensure we use it **correctly**.
 Furthermore, since `t` and `Maybe t` are now distinct types, if a function `f` were to add "empty boxes" to the input list, it would have to be typed as `f: List t -> List (Maybe t)`. And if it were to simply not return a list at all, it would be typed as `f: List t -> Maybe (List t)`.
