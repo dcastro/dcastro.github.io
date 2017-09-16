@@ -75,14 +75,14 @@ The reasoning is that `f` must work with lists of *any* type `t`. Since `f` know
 
 Here's another theorem:
 
-> For all types `A` and `B`, and every function `g: A -> B`, we have `map g (f list) = f (map g list)`
+> For all types `A` and `B`, and every function `g: A -> B`{:.language-hs}, we have `map g (f list) = f (map g list)`{:.language-hs}
 
 That is, applying `f` to a list and then transforming each of its elements using `map g`, must yield the same result as transforming each of its elements using `map g` and _then_ applying `f` to the transformed list. These two expressions are interchangeable, and we can refactor at will.
 
 Let's test this out. Let:
 
-* `f: List t -> List t` be `reverse`, a polymorphic function that reverses the order of the elements in a list
-* `g: String -> Int` be `stringLength`, a function that returns the length of a string
+* `f: List t -> List t`{:.language-hs} be `reverse`, a polymorphic function that reverses the order of the elements in a list
+* `g: String -> Int`{:.language-hs} be `stringLength`, a function that returns the length of a string
 
 The free theorem says that reversing a list and then getting the length of each string, is the exact same as getting the length of each string and then reversing the result.
 
@@ -104,11 +104,11 @@ $$ -->
 ```
 
 Hey presto!
-And we know this to be true for *any* `f: List t -> List t` and `g: A -> B`!
+And we know this to be true for *any* `f: List t -> List t`{:.language-hs} and `g: A -> B`{:.language-hs}!
 
 The principle at play is this: the less a function knows about its arguments, the less it can do. The less it can do, the easier it is to reason about it. Parametricity gives you analytical power.
 
-Give it a go. This function takes two arguments, a `List t` and a function `t -> Bool`, and returns another `List t`. Can you guess what it does?
+Give it a go. This function takes two arguments, a `List t` and a function `t -> Bool`{:.language-hs}, and returns another `List t`. Can you guess what it does?
 
 ```hs
 someFunction : (List t, t -> Bool) -> List t
@@ -140,7 +140,7 @@ I won't go into too much detail here, because there are plenty of great resource
 Its interface forces you to unwrap the box to find out if there's something inside and to handle both cases, usually through pattern matching or a reduce/fold function. You can't handle just *one* case.
 
 By capturing the notion of nullability as a proper type, we can now express precisely whether something is optional or not, and have the type checker ensure we use it **correctly**.
-Furthermore, since `t` and `Maybe t` are now distinct types, if a function `f` were to add "empty boxes" to the input list, it would have to be typed as `f: List t -> List (Maybe t)`. And if it were to simply not return a list at all, it would be typed as `f: List t -> Maybe (List t)`.
+Furthermore, since `t` and `Maybe t` are now distinct types, if a function `f` were to add "empty boxes" to the input list, it would have to be typed as `f: List t -> List (Maybe t)`{:.language-hs}. And if it were to simply not return a list at all, it would be typed as `f: List t -> Maybe (List t)`{:.language-hs}.
 Those functions would themselves generate their own sets of free theorems, and we'd be able to safely **reason** about them, just as we would about any other polymorphic function.
 
 Many programming languages have adopted this approach: Haskell, Scala, PureScript, Elm, F#, OCaml, Rust, to name a few.
