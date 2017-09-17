@@ -111,7 +111,7 @@ The principle at play is this: the less a function knows about its arguments, th
 Give it a go. This function takes two arguments, a `List t` and a function `t -> Bool`{:.language-hs}, and returns another `List t`. Can you guess what it does?
 
 ```hs
-someFunction : (List t, t -> Bool) -> List t
+someFunction: (List t, t -> Bool) -> List t
 ```
 
 Admittedly, these examples are a bit simple, but parametricity really pays off when trying to understand functions you've never seen before and how they could interact with others.
