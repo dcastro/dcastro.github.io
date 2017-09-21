@@ -9,8 +9,8 @@ issueId: 1
 `Null`. Ever since its debut in Algol W back in 1965, most programming languages have adopted this concept of nullability by default.
 That is, a variable of (pretty much) every type can be assigned this special `null` value that represents the absence of an actual value.
 
-Since then, it has come to be known as [Hoare's billion dollar mistake][billion dollar mistake].
-Nowadays, it's common knowledge that `null` is a common source of headaches, due to:
+Since then, its own maker has coined it his [billion dollar mistake][billion dollar mistake].
+Nowadays, it's common knowledge that `null` is a source of headaches, due to:
 
 * Being able to travel silently through the code before [exploding][prob-bomb] in your face,
 * [Subverting the type system][prob-subvert],
@@ -144,8 +144,8 @@ Furthermore, since `t` and `Maybe t` are now distinct types, if a function `f` w
 Those functions would themselves generate their own sets of free theorems, and we'd be able to safely **reason** about them, just as we would about any other polymorphic function.
 
 Many programming languages have adopted this approach: Haskell, Scala, PureScript, Elm, F#, OCaml, Rust, to name a few.
-It's also been added to Java in its eighth release ([though][java optional 1] [with][java optional 2] [questionable][java optional 3] [success][java optional 4]).
-There's a *very* good [port for C#][option-csharp] as well, and I'm willing to bet you can find one for whatever your language of choice is.
+It's been added to Java in its eighth release ([with][java optional 1] · [questionable][java optional 2] · [success][java optional 3]), and is also available as a [third party library][functional-java].
+There's a very good [port for C#][option-csharp] as well, and I'm willing to bet you can find one for whatever your language of choice is.
 
 Others have chosen a more *ad hoc* solution by adding special syntax to the language.
 In [Swift][swift optional] and [Kotlin][kotlin null], types are not nullable by default, and nullable types are explicitly labelled with a question mark, e.g. `String?`.
@@ -169,8 +169,7 @@ Eric Lippert, former member of the C# language design team, [explained in great 
  [non-empty-ps]: https://pursuit.purescript.org/packages/purescript-nonempty/4.0.0/docs/Data.NonEmpty#t:NonEmpty
  [java optional 1]: https://gist.github.com/oxbowlakes/8d13fae255412e00c59ae6f536a84773
  [java optional 2]: https://developer.atlassian.com/blog/2015/08/optional-broken/
- [java optional 3]: https://bugs.openjdk.java.net/browse/JDK-8075939
- [java optional 4]: https://stackoverflow.com/q/24547673/857807
+ [java optional 3]: https://stackoverflow.com/q/24547673/857807
  [csharp proposal]: https://github.com/dotnet/csharplang/blob/master/proposals/nullable-reference-types.md
  [kotlin null]: https://kotlinlang.org/docs/reference/null-safety.html
  [swift optional]: https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html
@@ -178,6 +177,7 @@ Eric Lippert, former member of the C# language design team, [explained in great 
  [billion dollar mistake]: https://en.wikipedia.org/wiki/Null_pointer#History
  [nat type]: https://www.stackage.org/haddock/lts-9.2/base-4.9.1.0/Numeric-Natural.html
  [option-csharp]: https://github.com/louthy/language-ext
+ [functional-java]: http://www.functionaljava.org/
 
  [prob-subvert]: https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science/
  [prob-bomb]: https://softwareengineering.stackexchange.com/a/12785/101308
