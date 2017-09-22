@@ -38,7 +38,7 @@ And we do that by carefully choosing and modelling our data types.
 
 This is why you don't use a `double` to represent a person's age, or a string whose content is expected to be numeric - you use an integer. Or even better, a [natural number][nat type].
 
-We might even use a non-empty list type ([`NonEmptyList[T]`][non-empty-scalaz] in Scalaz, [`NonEmpty t`][non-empty-hs] in Haskell, or [`NonEmpty f t`][non-empty-ps] in PureScript) to represent a list that is guaranteed to have at least one element, such as the set of stars that make up a constellation.
+We might even use a non-empty list type (`NonEmptyList[T]` in Scalaz, `NonEmpty t` in Haskell, or `NonEmpty f t` in PureScript) to represent a list that is guaranteed to have at least one element, such as the set of stars that make up a constellation.
 A function that takes a `NonEmptyList t` *cannot* be passed a possibly empty `List t` - we have made an illegal state unrepresentable!
 
 <!-- markdownlint-disable MD033 -->
@@ -55,11 +55,11 @@ Ergo, there are strictly fewer ways in which the compiler can help you not shoot
 
 ## Reasoning
 
-Parametricity is a property that allows you to derive [free theorems][free-theorems] about a polymorphic function just by looking at its type.
+Parametricity is a property that allows you to derive free theorems about a polymorphic function just by looking at its type.
 
 > Write down the definition of a polymorphic function on a piece of paper. Tell me its type, but be careful not to let me see the function's definition. I will tell you a theorem that this function satisfies.
 >
-> \- Philip Wadler, June 1989
+> \- Philip Wadler, June 1989 in "Theorems for Free"
 
 Take a look at the following polymorphic function `f`, which takes a list of some generic type `t` and returns a list of the same type `t`:
 
@@ -148,7 +148,7 @@ It's been added to Java in its eighth release ([with][java optional 1] · [quest
 There's a very good [port for C#][option-csharp] as well, and I'm willing to bet you can find one for whatever your language of choice is.
 
 Others have chosen a more *ad hoc* solution by adding special syntax to the language.
-In [Swift][swift optional] and [Kotlin][kotlin null], types are not nullable by default, and nullable types are explicitly labelled with a question mark, e.g. `String?`.
+In Swift and Kotlin, types are not nullable by default, and nullable types are explicitly labelled with a question mark, e.g. `String?`.
 There's also a [proposal][csharp proposal] to add something similar to C#'s reference types.
 
 However, retrofitting non-nullability into a language has its thorns.
@@ -162,17 +162,11 @@ Eric Lippert, former member of the C# language design team, [explained in great 
 > \- Eric Lippert
 
  [retrofit-probs]: http://archive.fo/FkYfR
- [free-theorems]: https://www.mpi-sws.org/~dreyer/tor/papers/wadler.pdf
  [illegal-states]: https://vimeo.com/14313378
- [non-empty-scalaz]: https://static.javadoc.io/org.scalaz/scalaz_2.12/7.2.15/scalaz/NonEmptyList.html
- [non-empty-hs]: https://www.stackage.org/haddock/lts-9.0/base-4.9.1.0/Data-List-NonEmpty.html
- [non-empty-ps]: https://pursuit.purescript.org/packages/purescript-nonempty/4.0.0/docs/Data.NonEmpty#t:NonEmpty
  [java optional 1]: https://gist.github.com/oxbowlakes/8d13fae255412e00c59ae6f536a84773
  [java optional 2]: https://developer.atlassian.com/blog/2015/08/optional-broken/
  [java optional 3]: https://stackoverflow.com/q/24547673/857807
  [csharp proposal]: https://github.com/dotnet/csharplang/blob/master/proposals/nullable-reference-types.md
- [kotlin null]: https://kotlinlang.org/docs/reference/null-safety.html
- [swift optional]: https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html
  [type system bug]: https://hackernoon.com/java-is-unsound-28c84cb2b3f
  [billion dollar mistake]: https://en.wikipedia.org/wiki/Null_pointer#History
  [nat type]: https://www.stackage.org/haddock/lts-9.2/base-4.9.1.0/Numeric-Natural.html
