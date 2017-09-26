@@ -144,7 +144,7 @@ Furthermore, since `t` and `Maybe t` are now distinct types, if a function `f` w
 Those functions would themselves generate their own sets of free theorems, and we'd be able to safely **reason** about them, just as we would about any other polymorphic function.
 
 Many programming languages have adopted this approach: Haskell, Scala, PureScript, Elm, F#, OCaml, Rust, to name a few.
-It's been added to Java in its eighth release ([with][java optional 1] · [questionable][java optional 2] · [success][java optional 3]), and is also available as a [third party library][functional-java].
+It's been added to Java in its eighth release ([with][java optional 1] · [questionable][java optional 2] · [success][java optional 3]), and is also available as a [third-party library][functional-java].
 There's a very good [port for C#][option-csharp] as well, and I'm willing to bet you can find one for whatever your language of choice is.
 
 Others have chosen a more *ad hoc* solution by adding special syntax to the language.
@@ -153,7 +153,7 @@ There's also a [proposal][csharp proposal] to add something similar to C#'s refe
 
 However, retrofitting non-nullability into a language has its thorns.
 Yes, it'll let you write safer code from then on, but what about existing code?
-Even though you *can* add syntax to a language or a new type to the standard library, changing the entire public surface of the existing standard library and third party libraries to use that new syntax/type is a *major* breaking change.
+Even though you *can* add syntax to a language or a new type to the standard library, changing the entire public surface of the existing standard library and third-party libraries to use that new syntax/type is a *major* breaking change.
 
 Eric Lippert, former member of the C# language design team, [explained in great detail][retrofit-probs] the difficulties of retrofitting this feature, concluding:
 
