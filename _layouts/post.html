@@ -21,23 +21,9 @@ layout: default
 <link rel="stylesheet" href="/css/comments.css">
 
 <script>
-  $.ajax("{{ site.github.comments_url | replace: '<issue-id>', page.issueId }}", {
-    headers: {Accept: "application/vnd.github.v3.html+json"},
-    dataType: "json",
-    success: function(msg){
-      loadComments(msg);
-    },
-    error: function(d) {
-      console.log(d);
-    }
-  });
-
-  function loadComments(data) {
-    for(var i = 0; i < data.length; i++) {
-      var comment = data[i];
-      $("#comments").append(createComment(comment));
-    }
-  }
+  $(function() {
+    fetchComments("{{ site.github.comments_url | replace: '<issue-id>', page.issueId }}");
+  })
 </script>
 
 
