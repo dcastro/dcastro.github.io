@@ -30,7 +30,7 @@ Instead, I'll take a step back and discuss why `null` inhibits correctness and h
 
 ## Correctness
 
-The point of having a type system is to have it verify the correctness of our code, to have it proof that certain properties of our system hold.
+The point of having a type system is to have it prove the correctness of our code, to have it prove that certain properties of our system hold.
 In order to do that, we embed as many rules as possible in it, we tell it what is legal and what isn't.
 Our job is not only to model a given domain and to make legal states representable but also to [make illegal states unrepresentable][illegal-states].
 
@@ -38,7 +38,7 @@ And we do that by carefully choosing and modelling our data types.
 
 This is why you don't use a `double` to represent a person's age, or a string whose content is expected to be numeric - you use an integer. Or even better, a [natural number][nat type].
 
-We might even use a non-empty list type (`NonEmptyList[T]` in Scalaz, `NonEmpty t` in Haskell, or `NonEmpty f t` in PureScript) to represent a list that is guaranteed to have at least one element, such as the set of stars that make up a constellation.
+We might even use a non-empty list type (`NonEmptyList[T]` in the Scalaz library, `NonEmpty t` in Haskell, or `NonEmpty f t` in PureScript) to represent a list that is guaranteed to have at least one element, such as the set of stars that make up a constellation.
 A function that takes a `NonEmptyList t` *cannot* be passed a possibly empty `List t` - we have made an illegal state unrepresentable!
 
 <!-- markdownlint-disable MD033 -->
@@ -50,7 +50,7 @@ Making every type nullable by default goes blatantly against this goal. It assum
 
 Not only is that assumption wrong, but most languages don't even have a built-in way of opting out of nullability! In C#, barring value types, you can't declare something to be non-nullable. There's no non-nullable `string`!
 
-This imposes a limit on how expressive we can be. There are strictly fewer things you can tell the compiler about the domain you're modelling.
+This imposes a limit on how expressive we can be. There are strictly fewer things you can tell the compiler about a domain.
 Ergo, there are strictly fewer ways in which the compiler can help you not shoot yourself in the foot.
 
 ## Reasoning
