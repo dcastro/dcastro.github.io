@@ -12,7 +12,7 @@ That is, a variable of (pretty much) every type can be assigned this special `nu
 Since then, its own maker has coined it his [billion dollar mistake][billion dollar mistake].
 Nowadays, it's common knowledge that `null` is a source of headaches, due to:
 
-* Being able to travel silently through the code before [exploding][prob-bomb] in your face,
+* Being able to travel silently through the code before it [explodes][prob-bomb] in your face,
 * [Subverting the type system][prob-subvert],
 * Inducing mental burden for having to remember/find out/guess which functions may return `null`,
 * Forcing you to [defensively null check every single argument][prob-aspnet] (especially when writing a library), and [test it][prob-aspnet-tests],
