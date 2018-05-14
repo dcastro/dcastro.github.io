@@ -161,7 +161,7 @@ Eric Lippert, former member of the C# language design team, [explained in great 
 >
 > \- Eric Lippert
 
- [retrofit-probs]: http://archive.fo/FkYfR
+ [retrofit-probs]: https://archive.today/FkYfR
  [illegal-states]: https://vimeo.com/14313378
  [java optional 1]: https://gist.github.com/oxbowlakes/8d13fae255412e00c59ae6f536a84773
  [java optional 2]: https://developer.atlassian.com/blog/2015/08/optional-broken/
