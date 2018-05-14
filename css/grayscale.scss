@@ -313,10 +313,23 @@ a:focus {
 }
 
 // projects grid
-#projects .row > div {
-    padding-right: $spacing;
-    padding-left: $spacing;
-    padding-bottom: $spacing;
+#projects {
+
+    #projects-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        
+        .project {
+            width: 33%;
+        }
+    }
+
+    .project {
+        padding-right: $spacing;
+        padding-left: $spacing;
+        padding-bottom: $spacing;
+    }
 
     h3 {
         border-bottom: 1px solid  $primary;
