@@ -5,7 +5,7 @@ highlighter:      rouge
 kramdown:
   input:          GFM
 
-gems:             [jekyll-coffeescript]
+plugins:          [jekyll-coffeescript]
 
 # Permalinks
 permalink:        pretty
