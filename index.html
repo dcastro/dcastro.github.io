@@ -83,7 +83,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>About Me</h2>
                 <p>
-                    Hiya! I hail from Portugal, and I'm a 28 years old software engineer currently living in Northern Ireland.
+                    Hiya! I hail from Portugal, and I'm a <span id="age"></span> years old software engineer currently living in Northern Ireland.
                 </p>
                 <p>
                     I'm most experienced with C# and Scala.
@@ -155,7 +155,7 @@
                     </a>
                 </p>
             </div>
-                    
+            
             <div class="project">
                 <h3>csi-init</h3>
                 <img src="img/csi.png" alt="csi-init" />
@@ -307,6 +307,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script>
+        // Yeah, this is dodgy, but I was born on January 2nd,
+        // and I don't really mind this being wrong 1 day a year.
+        document.getElementById("age").textContent = new Date().getFullYear() - 1989;
+    </script>
+    
 
     <!-- Custom Theme JavaScript -->
     <script src="js/grayscale.js"></script>
