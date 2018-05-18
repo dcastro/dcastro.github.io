@@ -53,7 +53,15 @@
 %   to show numerical labels in the bibliography (default is to show no labels)
 \makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
 
-\renewcommand*{\cventry}[7][.25em]{%
+\newcommand*{\cvitemspace}{1em}
+
+\renewcommand*{\cvitem}[3][\cvitemspace]{%
+  \begin{tabular}{@{}p{\hintscolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
+    \raggedleft\hintstyle{#2} &{#3}%
+  \end{tabular}%
+  \par\addvspace{#1}}
+  
+\renewcommand*{\cventry}[7][\cvitemspace]{%
   \cvitem[#1]{#2}{%
     {\bfseries#3}%
     \ifthenelse{\equal{#4}{}}{}{, {\slshape#4}}%
@@ -126,8 +134,8 @@ Studied and compared the efficiency of these approaches in navigating older adul
 Developed complex heuristics to evaluate landmarks data retrieved from OpenStreetMap,
 and used the device's sensors (e.g., gyroscope, accelerometer) to locate and navigate the user.
 }
-\cventry{May 2013-Jun 2014}{Softare Engineer}{NantHealth}{Belfast, UK}{}{}
-\cventry{Jul 2014-Nov 2017}{Senior Softare Engineer}{NantHealth}{Belfast, UK}{}{
+\cventry{May 2013-Jun 2014}{Software Engineer}{NantHealth}{Belfast, UK}{}{}
+\cventry{Jul 2014-Nov 2017}{Senior Software Engineer}{NantHealth}{Belfast, UK}{}{
 Responsible for designing, unit testing, implementing and deploying a variety of applications, such as:
 \begin{itemize}
   \item RESTful APIs, using ASP.NET Web API, ActiveMQ and Couchbase, Castle Windsor, Bootstrap,
@@ -146,7 +154,7 @@ people talk about topics that interest them. Sometimes I bring a kata (i.e. an
 exercise) for people to solve in a language of their choice, and share their
 solutions at the end.
 }
-\cventry{Nov 2017-Present}{Senior Softare Engineer}{SpotX}{Belfast, UK}{}{
+\cventry{Nov 2017-Present}{Senior Software Engineer}{SpotX}{Belfast, UK}{}{
 Developed RESTful web services in Scala and Akka HTTP, deployed using Docker.%
 \para
 I teach a weekly internal Scala/Functional Programming course,
