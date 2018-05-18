@@ -22,11 +22,22 @@
 \setlength{\hintscolumnwidth}{3.5cm}                % if you want to change the width of the column with the dates
 %\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
+% personal data
+\name{Diogo}{Castro}
+\address{20 Greenvale}{BT17 9LR}{United Kingdom}   % optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[mobile]{07552081034}                        % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+\email{dc@diogocastro.com}                         % optional, remove / comment the line if not wanted
+\homepage{diogocastro.com}                         % optional, remove / comment the line if not wanted
+\social[github]{dcastro}                           % optional, remove / comment the line if not wanted
+\collectionadd[homepage]{socials}{\protect\httplink[diogocastro.com/blog]{diogocastro.com/blog}}
+
+
+\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+
 \newcommand*{\homepagesocialsymbol}      {{\small\faGlobe}~}   
 
-% \newcommand{\para}{\vspace{.7ex} \\}
-% \newcommand{\para}{\\[.7ex]}
 \newcommand*{\para}{\vspace{.7ex}\newline}
+
 \newcommand*{\spacing}{\vspace{.7ex}}
 
 \newcommand*{\project}[3]{
@@ -39,19 +50,6 @@
 \newcommand*{\code}{\texttt}
 
 \newcommand*{\barelink}[1]{\protect\href{#1}{#1}}
-
-% personal data
-\name{Diogo}{Castro}
-\address{20 Greenvale}{BT17 9LR}{United Kingdom}   % optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
-\phone[mobile]{07552081034}                        % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
-\email{dc@diogocastro.com}                         % optional, remove / comment the line if not wanted
-\homepage{diogocastro.com}                         % optional, remove / comment the line if not wanted
-\social[github]{dcastro}                           % optional, remove / comment the line if not wanted
-\collectionadd[homepage]{socials}{\protect\httplink[diogocastro.com/blog]{diogocastro.com/blog}}
-
-% bibliography adjustements (only useful if you make citations in your resume, or print a list of publications using BibTeX)
-%   to show numerical labels in the bibliography (default is to show no labels)
-\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
 
 \newcommand*{\cvitemspace}{1em}
 
@@ -72,9 +70,6 @@
     \else{\newline{}\begin{minipage}[t]{\linewidth}#7\end{minipage}}\fi}}
 
 \makeatother
-%   to redefine the bibliography heading string ("Publications")
-%\renewcommand{\refname}{Articles}
-
 
 % bibliography with mutiple entries
 %\usepackage{multibib}
@@ -83,7 +78,7 @@
 %            content
 %----------------------------------------------------------------------------------
 \begin{document}
-%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+
 %-----       resume       ---------------------------------------------------------
 \makecvtitle
 
