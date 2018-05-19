@@ -6,7 +6,7 @@
 % available at http://www.latex-project.org/lppl/.
 
 
-\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\documentclass[12pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
 % moderncv themes
 \moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
@@ -116,7 +116,9 @@
   Git, Docker, Elastic Search, Druid, ActiveMQ, Jenkins, TeamCity, Chef
 }
 \cvitem{Other}{
-  Experience in an agile setting, using Kanban and Lean principles. Property based testing, test driven development.
+  Experience in an agile setting, using Kanban and Lean principles.
+  Property based testing, test driven development.
+  Typed functional programming.
 }
 
 
@@ -135,7 +137,7 @@ Responsible for designing, unit testing, implementing and deploying a variety of
 \begin{itemize}
   \item RESTful APIs, using ASP.NET Web API, ActiveMQ and Couchbase, Castle Windsor, Bootstrap,
   Coffeescript, LESS, MS SQL Server;
-  \item Front-end single page applications, using AngularJS, JavaScript/TypeScript;
+  \item Front-end single page applications, using AngularJS, JavaScript / TypeScript;
   \item Internal libraries (e.g. for standardized logging and messaging) written in C\#;
   \item An internal framework that acts as a concurrent general-purpose service
   host, handling multiple cross-cutting concerns;
@@ -152,11 +154,17 @@ solutions at the end.
 \cventry{Nov 2017-Present}{Senior Software Engineer}{SpotX}{Belfast, UK}{}{
 Developed RESTful web services in Scala and Akka HTTP, deployed using Docker.%
 \para
+Authored a Scala library for calculating the delta of any two values of a given type.
+Leveraged Shapeless, a library for generic programming, for automatic typeclass
+instances derivation.
+\para
 I teach a weekly internal Scala/Functional Programming course,
 with the goal of preparing our engineers to be productive in Scala whilst
 building an intuition of how to program with functions and equational
 reasoning.
 }
+
+\clearpage
 
 \section{Open Source}
 \project{Contributed to AutoFixture}{https://github.com/AutoFixture/AutoFixture}{
