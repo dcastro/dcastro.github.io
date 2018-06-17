@@ -24,6 +24,8 @@ author:
 sass:
   style:          compressed
 
+excerpt_separator: <!--more-->
+
 # Custom vars
 repository:       dcastro/dcastro.github.io
 github:

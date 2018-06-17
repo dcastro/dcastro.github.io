@@ -28,6 +28,8 @@ It's even responsible for [a bug in Java's own type system][type system bug]!
 Today, I won't bother going into those issues which have already been thoroughly debated.
 Instead, I'll take a step back and discuss why `null` inhibits correctness and hinders one's ability to reason about code.
 
+<!--more-->
+
 ## Correctness
 
 The point of having a type system is to have it prove the correctness of our code, to have it prove that certain properties of our system hold.
