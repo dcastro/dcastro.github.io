@@ -462,6 +462,17 @@ a.pagination-item:hover {
   word-wrap: break-word;
 }
 
-code {
+/* Inline code snippets - preserve whitespace */
+code.highlighter-rouge {
   white-space: pre;
+}
+
+@media (max-width: 30em) {
+  /*
+    Inline code snippets - preserve whitespace, but break lines.
+    Otherwise, long inline snippets would add an horizontal scrollbar to the page.
+  */
+  code.highlighter-rouge {
+    white-space: pre-wrap;
+  }
 }
