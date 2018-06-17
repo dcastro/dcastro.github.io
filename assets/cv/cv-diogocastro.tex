@@ -174,6 +174,12 @@ reasoning.
   how to setup the test scenario, by making it easier to create complex object graphs
   containing randomized test data.
 }
+\project{safe-buffer-monad}{https://hackage.haskell.org/package/safe-buffer-monad}{
+  An mtl-style typeclass that models a monadic buffer resilient to exceptions,
+  written in Haskell.
+  If an exception is thrown, the user will still be able to proccess the contents of the
+  buffer up to the point where the computation was interrupted.
+}
 \project{2048 AI}{https://github.com/dcastro/twenty48}{
   An AI for the 2048 game using minimax and alpha-beta pruning, as described by John Hughes in the paper "Why Functional Programming Matters".
   The AI was written in Haskell and runs in a Yesod backend.
