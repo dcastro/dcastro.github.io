@@ -2,7 +2,7 @@
 
     > gem install jekyll
     > bundle install
-    > bundle exec jekyll serve
+    > bundle exec jekyll serve --livereload
 
 ## Issues
 
