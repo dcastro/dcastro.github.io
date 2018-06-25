@@ -5,11 +5,12 @@ issueId: 2
 ---
 
 <!-- markdownlint-disable MD002 -->
+<!-- markdownlint-disable MD033 -->
 
-Typeclasses are typically taught by drawing analogies between them and method overloading (another form of ad hoc polymorphism),
+Typeclasses are typically taught by drawing parallels with method overloading (another form of ad hoc polymorphism),
 and Java-like interfaces (a form of subtyping polymorphism).
 
-Even though typeclasses are its own concept, it's only natural to want to compare them to other familiar constructs.
+Even though typeclasses are a concept in their own right, it's only natural to want to compare them to other familiar constructs.
 This can lead to a lot of confusion, and the line that separates these things can be blurry.
 
 So in this post I'll try to focus on their differences and show that their similarities are only superficial.
@@ -33,6 +34,8 @@ Say we're trying to abstract over all the types that can be JSON encoded.
 
 In Java or C#, one might reasonably start by defining an interface like this:
 
+<div class="code-label"><p>Java</p></div>
+
 ```java
 interface Encodable {
   Json toJson();
@@ -40,6 +43,8 @@ interface Encodable {
 ```
 
 And implementing it for a class `Person` is quite straightforward:
+
+<div class="code-label"><p>Java</p></div>
 
 ```java
 class Person implements Encodable {
@@ -56,6 +61,8 @@ But that's not always possible - we can't make types that we don't control exten
 
 Typeclasses, on the other hand, give us the freedom to add this behaviour to types outside our control.
 
+<div class="code-label"><p>Haskell</p></div>
+
 ```hs
 class Encodable a where
   toJson :: a -> Json
@@ -63,6 +70,8 @@ class Encodable a where
 instance Encodable Int where
   toJson i = _
 ```
+
+<div class="code-label"><p>Scala</p></div>
 
 ```scala
 trait Encodable[A] {
@@ -81,6 +90,8 @@ object Encodable {
 Let's keep going with our example. Say we now want to serialize lists.
 We know we can't change the built-in `List<A>` type, but let's pretend we can for a second.
 
+<div class="code-label"><p>Java</p></div>
+
 ```java
 class List<A> implements Encodable {
   public Json toJson() { ... }
@@ -97,6 +108,8 @@ But the Java type system is not expressive enough, it doesn't let us express thi
 
 Typeclasses make this trivial.
 
+<div class="code-label"><p>Haskell</p></div>
+
 ```hs
 instance Encodable a => Encodable [a] where
   toJson list = _
@@ -104,6 +117,8 @@ instance Encodable a => Encodable [a] where
 instance (Encodable a, Encodable b) => Encodable (a, b) where
   toJson (a, b) = _
 ```
+
+<div class="code-label"><p>Scala</p></div>
 
 ```scala
 implicit def encodableList[A : Encodable] =
@@ -125,6 +140,8 @@ With it, we can write functions that work on *some* types, and behave slightly d
 
 Most languages implement a simple form of ad hoc polymorphism generally called function/method/operator overloading.
 
+<div class="code-label"><p>Java</p></div>
+
 ```java
 Json toJson(String s) { ... }
 Json toJson(Integer i) { ... }
@@ -145,6 +162,8 @@ Dealing with even slightly more complex types, like lists of pairs, will *not* b
 But can we do the same with `fromJson`, a function that parses a `Json`?
 Let's give it a go.
 
+<div class="code-label"><p>Java</p></div>
+
 ```java
 Optional<String> fromJson(Json s) { ... }
 Optional<Integer> fromJson(Json s) { ... }
@@ -155,6 +174,8 @@ Java and most C-like languages lack what's called *return-type polymorphism*.
 Overloads can have different parameters, but they cannot differ (solely) in their return types.
 
 With typeclasses, all we have to do is take `Encodable` and flip the arrow:
+
+<div class="code-label"><p>Haskell</p></div>
 
 ```hs
 {-# LANGUAGE OverloadedStrings #-}
@@ -169,6 +190,8 @@ instance Decodable Int where
 instance Decodable Text where
   fromJson json = Just "hello"
 ```
+
+<div class="code-label"><p>Scala</p></div>
 
 ```scala
 trait Decodable[A] {
@@ -194,6 +217,8 @@ object Decodable {
 Type inference will in most cases be able to disambiguate between overloads (more so in Haskell than in Scala),
 but on the off-chance it can't, there's nothing a little type annotation can't fix.
 
+<div class="code-label"><p>Haskell</p></div>
+
 ```hs
 λ> fromJson json :: Maybe Int
 Just 5
@@ -201,6 +226,8 @@ Just 5
 λ> fromJson json :: Maybe Text
 Just "hello"
 ```
+
+<div class="code-label"><p>Scala</p></div>
 
 ```scala
 @ import Decodable._
@@ -228,6 +255,8 @@ These not only describe types, they describe *relations between types*.
 We can, for example, define a typeclass that describes two types `a` and `b`, such that any value
 of type `a` can be safely, losslessly converted to a value of type `b`.
 
+<div class="code-label"><p>Haskell</p></div>
+
 ```hs
 {-# LANGUAGE MultiParamTypeClasses #-}
 import Data.Int
@@ -241,6 +270,8 @@ instance Cast Int Int64 where
 instance Cast a b => Cast [a] [b] where
   cast xs = map cast xs
 ```
+
+<div class="code-label"><p>Scala</p></div>
 
 ```scala
 trait Cast[A, B] {
@@ -261,6 +292,8 @@ object Cast {
 
 A classic example is a typeclass that describes how two things can be multiplied to produce a third thing
 (where all these 3 things can be of different types):
+
+<div class="code-label"><p>Haskell</p></div>
 
 ```hs
 class Mult a b c where
@@ -285,6 +318,8 @@ from the operand types `a` and `b`. From the Haskell wiki:
 
 > When you know the types of the things that you're multiplying, the result type should be determined from that information alone.
 
+<div class="code-label"><p>Haskell</p></div>
+
 ```haskell
 {-# LANGUAGE FunctionalDependencies #-}
 
@@ -294,6 +329,8 @@ class Mult a b c | a b -> c where
 
 This greatly improves type inference.
 In Scala, this can be emulated by making `C` an abstract type member instead.
+
+<div class="code-label"><p>Scala</p></div>
 
 ```scala
 trait Mult[A, B] {
@@ -313,6 +350,8 @@ Typeclasses rely on static dispatch. Which methods/functions get called is fully
 
 Why does this matter? Let's try implementing a function that increments every element of a collection, using the `Seq[A]` Scala "interface".
 
+<div class="code-label"><p>Scala</p></div>
+
 ```scala
 def addOne(xs: Seq[Int]): Seq[Int] = xs.map(_ + 1)
 
@@ -320,6 +359,8 @@ val result: Seq[Int] = addOne(List(1,2,3))
 ```
 
 Now here's a different, equally valid, implementation and invocation of the same function:
+
+<div class="code-label"><p>Scala</p></div>
 
 ```scala
 def addOne(xs: Seq[Int]): Seq[Int] =
@@ -339,6 +380,8 @@ Two things worth highlighting:
 
 Now let's redefine `addOne`, but this time with the [`Functor` typeclass][cats-functor] instead:
 
+<div class="code-label"><p>Haskell</p></div>
+
 ```hs
 addOne :: Functor f => f Int -> f Int
 addOne xs = fmap (+1) xs
@@ -346,6 +389,8 @@ addOne xs = fmap (+1) xs
 λ> addOne [1,2,3]
 [2,3,4]
 ```
+
+<div class="code-label"><p>Scala</p></div>
 
 ```scala
 @ import $ivy.`org.typelevel::cats-core:1.1.0`, cats._, cats.implicits._

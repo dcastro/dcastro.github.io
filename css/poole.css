@@ -476,3 +476,16 @@ code.highlighter-rouge {
     white-space: pre-wrap;
   }
 }
+
+.code-label {
+  position: relative;
+}
+
+.code-label p {
+  font-size: 0.8em;
+  margin-bottom: 0;
+  color: #9a9a9a;
+
+  position: absolute;
+  right: 5px;
+}
