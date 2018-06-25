@@ -132,13 +132,13 @@ implicit def encodablePair[A : Encodable, B : Encodable] =
   }
 ```
 
-## Return-type polymorphism
+---
 
 Clearly, subtyping polymorphism just won't do in this instance.
-So let's try ad hoc polymorphism instead.
-With it, we can write functions that work on *some* types, and behave slightly differently for each one.
+Let's try something different.
 
 Most languages implement a simple form of ad hoc polymorphism generally called function/method/operator overloading.
+With it, we can write functions that work on *some* types, and behave slightly differently for each one.
 
 <div class="code-label"><p>Java</p></div>
 
@@ -158,6 +158,8 @@ We do have to bear the burden of:
 
 We can sorta kinda maybe live with it, as long as we keep our type-fu to a minimum.
 Dealing with even slightly more complex types, like lists of pairs, will *not* be fun.
+
+## Return-type polymorphism
 
 But can we do the same with `fromJson`, a function that parses a `Json`?
 Let's give it a go.
