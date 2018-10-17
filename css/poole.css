@@ -448,13 +448,7 @@ a.pagination-item:hover {
 }
 
 /*
- * MathJax
- */
-/* 
-.MathJax_Display {
-  overflow: hidden;
-  overflow-x: auto;
-}
+ * Other
  */
 
 .post a {
@@ -477,6 +471,8 @@ code.highlighter-rouge {
   }
 }
 
+.done { color: #339933; }
+
 .code-label {
   position: relative;
 }
@@ -488,4 +484,15 @@ code.highlighter-rouge {
 
   position: absolute;
   right: 5px;
+}
+
+.tex { text-align: center; }
+.tex > img { display: inline; }
+
+/*
+ * TOC
+ */
+.post ul ul {
+  /* Removed bottom margin for nested lists in TOC */
+  margin-bottom: 0;
 }

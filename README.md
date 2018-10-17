@@ -1,8 +1,18 @@
 ## Install
 
-    > gem install jekyll
-    > bundle install
-    > bundle exec jekyll serve --livereload
+```plain
+> gem install jekyll
+> bundle install
+> bundle exec jekyll serve --livereload
+```
+
+To compile the latex diagrams, install pdflatex and then:
+
+```plain
+> brew install pdf2svg
+> cd img/diagrams
+> pdflatex -shell-escape -interaction=nonstopmode kind-system.tex
+```
 
 ## Issues
 

@@ -281,3 +281,7 @@ TSWLatexianTemp*
 ### LaTeX Patch ###
 # glossaries
 *.glstex
+
+### Custom rules ###
+# These are intermediate pdf files needed to generate svg files
+img/diagrams/*.pdf

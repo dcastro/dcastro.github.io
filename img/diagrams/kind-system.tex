@@ -1,0 +1,103 @@
+\documentclass[crop,tikz,convert={outext=.svg,command=\unexpanded{pdf2svg \infile\space\outname\%03d.svg\outtext \space all}},multi=false]{standalone}
+
+% Compile using this command to create a `svg` file for each diagram:
+% pdflatex -shell-escape -interaction=nonstopmode state-machines.tex
+
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{textcomp}
+
+% use normal sized font for arrow labels
+\tikzcdset{every label/.append style = {font = \normalsize}}
+
+% modify the meaning of 'normal' column separators to 'tiny'.
+% alternatively, add `[column sep=tiny]` to every diagram.
+% \tikzcdset{column sep/normal=0.45em}
+
+\usetikzlibrary{cd}
+
+\begin{document}
+
+\large
+
+% Types of kind *
+
+\begin{tikzcd}[column sep=tiny]
+  kinds & & & & * \\
+  types & & \text{String} \ar[rru] & & & & \text{Bool} \ar[llu] \\
+  terms & \text{"hello"} \ar[ru] & & \text{"world"} \ar[lu] & & \text{True} \ar[ru] & & \text{False} \ar[lu]
+\end{tikzcd}
+
+\begin{tikzcd}[column sep=tiny]
+  kinds & & \text{*}\\
+  types 
+    & \text{String \textrightarrow{} Int \textrightarrow{} Person} \ar[ru]
+    & \text{Int \textrightarrow{} Person} \ar[u]
+    & \text{Person} \ar[lu] \\
+  terms
+    & \text{MkPerson} \ar[u]
+    & \text{MkPerson "Diogo"} \ar[u]
+    & \text{MkPerson "Diogo" 29} \ar[u]
+\end{tikzcd}
+
+\begin{tikzcd}[column sep=tiny]
+  kinds
+    & \text{* \textrightarrow{} * \textrightarrow{} *}
+    & \text{* \textrightarrow{} *}
+    & \text{*}\\
+  types
+    & \text{Either} \ar[u]
+    & \text{Either String} \ar[u]
+    & \text{Either String Int} \ar[u] \\
+  terms & & & \text{Left "a"} \ar[u] & \text{Right 1} \ar[lu]
+\end{tikzcd}
+
+% DataKinds
+
+\begin{tikzcd}[column sep=tiny]
+  kinds & & * \\
+  types & & \text{ConnectionStatus} \ar[u] \\
+  terms & \text{Open} \ar[ur] & & \text{Closed} \ar[ul]
+\end{tikzcd}
+
+\begin{tikzcd}[column sep=tiny]
+  kinds & & \text{ConnectionStatus} \\
+  types & \text{'Open} \ar[ur] & & \text{'Closed} \ar[ul]\\
+  terms && \text{N/A}
+\end{tikzcd}
+
+% GHC.TypeLits
+
+\begin{tikzcd}[column sep=tiny]
+  kinds & & \text{*} & & & \text{Symbol} \\
+  types & & \text{String} \ar[u] & & \text{"hello"} \ar[ur] & & \text{"world"} \ar[ul]\\
+  terms & \text{"hello"} \ar[ur] & & \text{"world"} \ar[ul] & & \text{N/A}
+\end{tikzcd}
+
+% Unboxed types/kinds
+
+\begin{tikzcd}[column sep=tiny]
+  kinds
+    & \text{TYPE IntRep}
+    & \text{TYPE WordRep}
+    &
+    & \text{TYPE (TupleRep '[IntRep, WordRep])} \\
+  types
+    & \text{Int\#} \ar[u]
+    & \text{Word\#} \ar[u]
+    & \text{Char\#} \ar[ul]
+    & \text{(\# Int\#, Char\# \#)} \ar[u] \\
+  terms
+    & \text{3\#} \ar[u]
+    & \text{4\#\#} \ar[u]
+    & \text{'a'\#} \ar[u]
+    & \text{(\# 3\#, 'a'\# \#)} \ar[u]
+\end{tikzcd}
+
+
+\end{document}
+
+
