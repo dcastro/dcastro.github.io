@@ -7,6 +7,8 @@ kramdown:
 
 plugins:          [jekyll-coffeescript]
 
+show_drafts:      false
+
 # Permalinks
 permalink:        pretty
 
