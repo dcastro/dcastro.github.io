@@ -47,6 +47,7 @@
     #3
     }
 }
+
 \newcommand*{\code}{\texttt}
 
 \newcommand*{\barelink}[1]{\protect\href{#1}{#1}}
@@ -138,7 +139,7 @@ Responsible for designing, unit testing, implementing and deploying a variety of
   \item RESTful APIs, using ASP.NET Web API, ActiveMQ and Couchbase, Castle Windsor, Bootstrap,
   Coffeescript, LESS, MS SQL Server;
   \item Front-end single page applications, using AngularJS, JavaScript / TypeScript;
-  \item Internal libraries (e.g. for standardized logging and messaging) written in C\#;
+  \item Internal libraries (e.g. for standardised logging and messaging) written in C\#;
   \item An internal framework that acts as a concurrent general-purpose service
   host, handling multiple cross-cutting concerns;
   \item Routing of messages between applications using Java and Apache Camel.
@@ -146,7 +147,7 @@ Responsible for designing, unit testing, implementing and deploying a variety of
 \spacing I've also built some small internal tools to help streamline my coworkers' and
 my day-to-day activities, using Scala, Haskell and PureScript.
 \para
-I helped organize a weekly Brown Bag Session during lunch hour, in which
+I helped organise a weekly Brown Bag Session during lunch hour, in which
 people talk about topics that interest them. Sometimes I bring a kata (i.e. an
 exercise) for people to solve in a language of their choice, and share their
 solutions at the end.
@@ -167,12 +168,9 @@ reasoning.
 \clearpage
 
 \section{Open Source}
-\project{Contributed to AutoFixture}{https://github.com/AutoFixture/AutoFixture}{
-  AutoFixture is an open source library for .NET designed to minimize the
-  'Arrange' phase of your unit tests in order to maximise maintainability. Its
-  primary goal is to allow developers to focus on what is being tested rather than
-  how to setup the test scenario, by making it easier to create complex object graphs
-  containing randomized test data.
+\project{haskell-flatbuffers}{https://github.com/dcastro/haskell-flatbuffers}{
+  Work in progress. Haskell implementation of FlatBuffers, a protocol for memory efficient
+  serialisation, originally designed by Google.
 }
 \project{safe-buffer-monad}{https://hackage.haskell.org/package/safe-buffer-monad}{
   An mtl-style typeclass that models a monadic buffer resilient to exceptions,
@@ -205,6 +203,13 @@ reasoning.
   push/pop/peek operations in constant time O(1) - and a regular deque
   implemented as a ring buffer.
 }
+\project{Contributed to AutoFixture}{https://github.com/AutoFixture/AutoFixture}{
+  AutoFixture is an open source library for .NET designed to minimise the
+  'Arrange' phase of your unit tests in order to maximise maintainability. Its
+  primary goal is to allow developers to focus on what is being tested rather than
+  how to setup the test scenario, by making it easier to create complex object graphs
+  containing randomised test data.
+}
 \project{JSend WebApi \& Client}{https://github.com/dcastro/JSendWebApi}{
   JSend.WebApi is an extension of ASP.NET Web API for designing APIs using the
   JSend protocol (\barelink{https://labs.omniti.com/labs/jsend}).
@@ -215,11 +220,17 @@ reasoning.
   the container takes a snapshot of your objects' state, so that you can easily
   rollback when recovering from errors or implementing an "undo" mechanism.
 }
+\cvitem{\textbf{Smaller contributions}}{
+  \begin{itemize}
+    \item Monocle: An optics library for Scala, inspired by Haskell's \code{lens}.
+    \item Circe: A JSON library for Scala.
+  \end{itemize}
+}
 
 \section{Projects}
 \project{MetroTasks}{https://www.microsoft.com/store/p/metrotasks/9wzdncrdfxdk}{
   Metro Tasks is a productivity application for Windows 8 / Windows RT that
-  helps you keep track of your to-do's. The app features synchronization with
+  helps you keep track of your to-do's. The app features synchronisation with
   Google Tasks, type-to-search, tile and lock screen updates.
 }
 
