@@ -47,9 +47,6 @@
                         <a href="#about">About</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#projects">Projects</a>
-                    </li>
-                    <li class="page-scroll">
                         <a href="#contact">Contact</a>
                     </li>
                 </ul>
@@ -83,7 +80,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>About Me</h2>
                 <p>
-                    Hiya! I hail from Portugal, and I'm a <span id="age"></span> years old software engineer currently living in Northern Ireland.
+                    Hiya! I hail from Portugal, and I'm a software engineer currently living in Northern Ireland.
                 </p>
                 <p>
                     I'm most experienced with C# and Scala.
@@ -129,166 +126,6 @@
         </div>
     </section>
 
-    <section id="projects" class="container text-center">
-        <h2>Projects</h2>
-        <div id="projects-content">
-            <div class="project">
-                <h3>2048 AI</h3>
-                <img src="img/2048.png" alt="2048 AI" />
-                <p class="description">
-                    An AI for the 2048 game using minimax and alpha-beta pruning, as described by John Hughes in
-                    the paper "Why Functional Programming Matters".
-                    Written in Haskell and Yesod. Deployed on AWS using Docker.
-                </p>
-                <small class="tags">
-                    <i class="fa fa-tags fa-fw"></i>
-                    <span>Haskell, Yesod, Websockets, Docker</span>
-                </small>
-                <p class="links">
-                    <a href="https://2048.diogocastro.com/" class="btn btn-default" target="_blank">
-                        <i class="fa fa-external-link fa-fw"></i>
-                        <span class="network-name">Demo</span>
-                    </a>
-                    <a href="https://github.com/dcastro/twenty48" class="btn btn-default" target="_blank">
-                        <i class="fa fa-github fa-fw"></i>
-                        <span class="network-name">GitHub</span>
-                    </a>
-                </p>
-            </div>
-            
-            <div class="project">
-                <h3>csi-init</h3>
-                <img src="img/csi.png" alt="csi-init" />
-                <p class="description">
-                    Csi-init is a command line tool written in Haskell, which lets you
-                    launch Roslyn's C# REPL ("csi") preloaded with all the assemblies found in one or
-                    more directories.
-                </p>
-                <small class="tags">
-                    <i class="fa fa-tags fa-fw"></i>
-                    <span>Haskell, C#, Roslyn</span>
-                </small>
-                <p class="links">
-                    <a href="https://github.com/dcastro/csi-init" class="btn btn-default" target="_blank">
-                        <i class="fa fa-github fa-fw"></i>
-                        <span class="network-name">GitHub</span>
-                    </a>
-                </p>
-            </div>
-            <div class="project">
-                <h3>Sequences</h3>
-                <img src="img/sequences.png" alt="Sequences" />
-                <p class="description">
-                    Sequences is a port of Scala's <a href="https://www.scala-lang.org/api/current/scala/collection/immutable/Stream.html" target="_blank">Stream[+A]</a> to C#.
-                    A Sequence&lt;T&gt; is an immutable lazy list whose elements are only evaluated when they are needed. It is composed by a head (the first element) and a lazily-evaluated tail (the remaining elements).
-                </p>
-                <small class="tags">
-                    <i class="fa fa-tags fa-fw"></i>
-                    <span>C#, Scala, memoization, immutability, data-structures</span>
-                </small>
-                <p class="links">
-                    <a href="https://github.com/dcastro/Sequences" class="btn btn-default" target="_blank">
-                        <i class="fa fa-github fa-fw"></i>
-                        <span class="network-name">GitHub</span>
-                    </a>
-                </p>
-            </div>
-            <div class="project">
-                <h3>DequeNET</h3>
-                <img src="img/deque.png" alt="DequeNET" />
-                <p class="description">
-                    A concurrent lock-free deque (double-ended queue) implementation in C# - push/pop/peek operations in constant time O(1) - and a regular deque implemented as a ring buffer.
-                </p>
-                <small class="tags">
-                    <i class="fa fa-tags fa-fw"></i>
-                    <span>C#, concurrency, data-structures</span>
-                </small>
-                <p class="links">
-                    <a href="https://github.com/dcastro/DequeNET" class="btn btn-default" target="_blank">
-                        <i class="fa fa-github fa-fw"></i>
-                        <span class="network-name">GitHub</span>
-                    </a>
-                </p>
-            </div>
-            <div class="project">
-                <h3>JSend WebApi & Client</h3>
-                <img src="img/jsend.png" alt="JSend" />
-                <p class="description">
-                    JSend.WebApi extends ASP.NET Web API 2's ApiController and enables easy generation of JSend-formatted responses.
-                    JSend.Client complements the controller, by providing an easy way to send HTTP requests and parse JSend-formatted responses.
-                </p>
-                <small class="tags">
-                    <i class="fa fa-tags fa-fw"></i>
-                    <span>C#, Web API</span>
-                </small>
-                <p class="links">
-                    <a href="https://github.com/dcastro/JSendWebApi" class="btn btn-default" target="_blank">
-                        <i class="fa fa-github fa-fw"></i>
-                        <span class="network-name">GitHub</span>
-                    </a>
-                </p>
-            </div>
-            <div class="project">
-                <h3>MementoContainer</h3>
-                <img src="img/memento.jpg" alt="Memento Container" />
-                <p class="description">
-                    An alternative approach to the Memento design pattern. Through reflection, the container takes a snapshot of your objects' state, so that you can easily rollback when recovering from errors or implementing an "undo" mechanism.
-                </p>
-                <small class="tags">
-                    <i class="fa fa-tags fa-fw"></i>
-                    <span>C#, design-patterns</span>
-                </small>
-                <p class="links">
-                    <a href="https://github.com/dcastro/MementoContainer" class="btn btn-default" target="_blank">
-                        <i class="fa fa-github fa-fw"></i>
-                        <span class="network-name">GitHub</span>
-                    </a>
-                </p>
-            </div>
-            <div class="project">
-                <h3>MetroTasks</h3>
-                <img src="img/metrotasks.png" alt="MetroTasks" />
-                <p class="description">
-                    Metro Tasks is a productivity application for Windows 8 / Windows RT that helps you keep track of your to-do's.
-                    The app features synchronization with Google Tasks, type to search, tile and lock screen updates.
-                </p>
-                <small class="tags">
-                    <i class="fa fa-tags fa-fw"></i>
-                    <span>C#, WinRT</span>
-                </small>
-                <p class="links">
-                    <a href="https://www.microsoft.com/en-gb/store/p/metrotasks/9wzdncrdfxdk?rtc=1" class="btn btn-default" target="_blank">
-                        <i class="fa fa-windows fa-fw"></i>
-                        <span class="network-name">Windows Store</span>
-                    </a>
-                </p>
-            </div>
-            <div class="project">
-                <h3>Master's Thesis</h3>
-                <img src="img/thesis.png" alt="Master's Thesis" />
-                <p class="description">
-                    Entitled "Improving pedestrian navigation for older adults and persons with mild dementia through landmarks" and written at
-                    <a href="https://www.fraunhofer.pt/en/" target="_blank">Fraunhofer Portugal</a>.
-                    Developed the navigation module for <a href="https://www.fraunhofer.pt/en/fraunhofer_aicos/projects/internal_research/alznav.html" target="_blank">AlzNav</a>, using both turn-by-turn and landmark-based approaches.
-                </p>
-                <small class="tags">
-                    <i class="fa fa-tags fa-fw"></i>
-                    <span>Android, navigation, research</span>
-                </small>
-                <p class="links">
-                    <a href="assets/thesis.pdf" class="btn btn-default" target="_blank">
-                        <i class="fa fa-download fa-fw"></i>
-                        <span class="network-name">PDF</span>
-                    </a>
-                    <a href="assets/thesis-summary.pdf" class="btn btn-default" target="_blank">
-                        <i class="fa fa-download fa-fw"></i>
-                        <span class="network-name">2 Page Summary</span>
-                    </a>
-                </p>
-            </div>
-        </div>
-    </section>
-
     <section id="contact" class="container text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
@@ -307,12 +144,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script>
-        // Yeah, this is dodgy, but I was born on January 2nd,
-        // and I don't really mind this being wrong 1 day a year.
-        document.getElementById("age").textContent = new Date().getFullYear() - 1989;
-    </script>
-    
 
     <!-- Custom Theme JavaScript -->
     <script src="js/grayscale.js"></script>
