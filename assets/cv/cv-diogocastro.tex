@@ -33,7 +33,7 @@
 
 \renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
 
-\newcommand*{\homepagesocialsymbol}      {{\small\faGlobe}~}   
+\newcommand*{\homepagesocialsymbol}      {{\small\faGlobe}~}
 
 \newcommand*{\para}{\vspace{.7ex}\newline}
 
@@ -58,7 +58,7 @@
     \raggedleft\hintstyle{#2} &{#3}%
   \end{tabular}%
   \par\addvspace{#1}}
-  
+
 \renewcommand*{\cventry}[7][\cvitemspace]{%
   \cvitem[#1]{#2}{%
     {\bfseries#3}%
@@ -168,7 +168,7 @@ reasoning.
 
 \section{Talks}
 \cventry{Jan 2019}{The Haskell Epidemic}{The Crystal Ball BASH, Belfast}{}{}{
-  A presentation about Haskell's most influential features and how Haskell has shaped the software engineering landscape.
+  A presentation about some of Haskell's most influential features and how Haskell has shaped the software engineering landscape.
   \para
   Recording: \barelink{https://youtu.be/nnoOF1HeAls}
   \para
@@ -177,8 +177,8 @@ reasoning.
 
 
 \section{Open Source}
-\project{haskell-flatbuffers}{https://github.com/dcastro/haskell-flatbuffers}{
-  Work in progress. Haskell implementation of FlatBuffers, a protocol for memory efficient
+\project{haskell-flatbuffers}{https://hackage.haskell.org/package/flatbuffers}{
+  Haskell implementation of FlatBuffers, a protocol for memory efficient
   serialisation, originally designed by Google.
 }
 \project{safe-buffer-monad}{https://hackage.haskell.org/package/safe-buffer-monad}{
@@ -230,7 +230,7 @@ reasoning.
     \item Circe: A JSON library for Scala.
     \item Refined: A refinement types library for Scala, i.e. enables
     the constraining of types using type-level predicates.
-    \item Newts: Newtypes and associated typeclass instances.
+    \item Newts: Scala library with commonly used newtypes and associated typeclass instances.
   \end{itemize}
 }
 
