@@ -24,7 +24,8 @@
 
 % personal data
 \name{Diogo}{Castro}
-\phone[mobile]{07552081034}                        % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+\address{Belfast}{United Kingdom}
+\phone[mobile]{+44 7552081034}                     % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
 \email{dc@diogocastro.com}                         % optional, remove / comment the line if not wanted
 \homepage{diogocastro.com}                         % optional, remove / comment the line if not wanted
 \social[github]{dcastro}                           % optional, remove / comment the line if not wanted
@@ -135,7 +136,7 @@ and used the device's sensors (e.g., gyroscope, accelerometer) to locate and nav
 \cventry{Jul 2014-Nov 2017}{Senior Software Engineer}{NantHealth}{Belfast, UK}{}{
 Responsible for designing, unit testing, implementing and deploying a variety of applications, such as:
 \begin{itemize}
-  \item RESTful APIs, using ASP.NET Web API, ActiveMQ and Couchbase, Castle Windsor, Bootstrap,
+  \item RESTful APIs, using ASP.NET Web API, ActiveMQ and Couchbase, Bootstrap,
   Coffeescript, LESS, MS SQL Server;
   \item Front-end single page applications, using AngularJS, JavaScript / TypeScript;
   \item Internal libraries (e.g. for standardised logging and messaging) written in C\#;
@@ -147,24 +148,28 @@ Responsible for designing, unit testing, implementing and deploying a variety of
 my day-to-day activities, using Scala, Haskell and PureScript.
 \para
 I helped organise a weekly Brown Bag Session during lunch hour, in which
-people talk about topics that interest them. Sometimes I bring a kata (i.e. an
+people talk about topics that interest them. Sometimes brought a kata (i.e. an
 exercise) for people to solve in a language of their choice, and share their
 solutions at the end.
 }
 \cventry{Nov 2017-Present}{Senior Software Engineer}{SpotX}{Belfast, UK}{}{
-Developed RESTful web services in Scala and Akka HTTP, deployed using Docker.%
-\para
-Authored a Scala library for calculating the delta of any two values of a given type.
-Leveraged Shapeless, a library for generic programming, for automatic typeclass
-instances derivation.
-\para
-I teach a weekly internal Scala/Functional Programming course,
-with the goal of preparing our engineers to be productive in Scala whilst
-building an intuition of how to program with functions and equational
-reasoning.
+  Developed RESTful web services in Scala, using the \code{cats} framework and Akka HTTP, deployed using Docker.%
+  \para
+  Worked on a service that aimed to augment Apache Druid, a timeseries database, with features such as
+  access control, a simpler and safer query DSL, and converting monetary
+  metrics to multiple currencies.
+  \para
+  Authored a Scala library for calculating the delta of any two values of a given type
+  using Shapeless, a library for generic programming.
+  \para
+  Taught a weekly internal Scala/Functional Programming course,
+  with the goal of preparing our engineers to be productive in Scala whilst
+  building an intuition of how to program with functions and equational
+  reasoning.
+  \para
+  I also train new hires and help bridge the gap between what they already know
+  and Scala/Functional Programming.
 }
-
-\clearpage
 
 \section{Talks}
 \cventry{Jan 2019}{The Haskell Epidemic}{The Crystal Ball BASH, Belfast}{}{}{
@@ -181,31 +186,13 @@ reasoning.
   Haskell implementation of FlatBuffers, a protocol for memory efficient
   serialisation, originally designed by Google.
 }
-\project{safe-buffer-monad}{https://hackage.haskell.org/package/safe-buffer-monad}{
-  An mtl-style typeclass that models a monadic buffer resilient to exceptions,
-  written in Haskell.
-  If an exception is thrown, the user will still be able to proccess the contents of the
-  buffer up to the point where the computation was interrupted.
-}
-\project{2048 AI}{https://github.com/dcastro/twenty48}{
-  An AI for the 2048 game using minimax and alpha-beta pruning, as described by John Hughes in the paper "Why Functional Programming Matters".
-  The AI was written in Haskell and runs in a Yesod backend.
-  The decisions are streamed to the browser via a websockets connection.
-  The user's scores are saved in a PostgreSQL database.
-  Deployed on AWS using Docker.
-  \newline
-  Demo: \barelink{https://2048.diogocastro.com/}.
-}
 \project{csi-init}{https://github.com/dcastro/csi-init}{
   Csi-init is a simple command line tool written in Haskell, which allows you to
   launch Roslyn's C\# REPL (csi) preloaded with all the assemblies found in one or
   more directories.
 }
 \project{sequences}{https://github.com/dcastro/sequences}{
-  Sequences is a port of Haskell's lists or Scala's \code{Stream[+A]} to C\#.
-  A \code{Sequence<T>} is an immutable lazy list whose elements are only evaluated
-  when they are needed. It is composed by a head (the first element) and a
-  lazily-evaluated tail (the remaining elements).
+  Sequences is a port of Haskell's immutable lazy lists or Scala's \code{Stream[+A]} to C\#.
 }
 \project{DequeNET}{https://github.com/dcastro/DequeNET}{
   A concurrent lock-free deque (double-ended queue) implementation in C\# -
@@ -226,6 +213,8 @@ reasoning.
 }
 \cvitem{\textbf{Smaller contributions}}{
   \begin{itemize}
+    \item mono-traversable: A Haskell library with typeclasses for working with
+    both polymorphic and monomorphic containers.
     \item Monocle: An optics library for Scala, inspired by Haskell's \code{lens}.
     \item Circe: A JSON library for Scala.
     \item Refined: A refinement types library for Scala, i.e. enables
@@ -235,6 +224,15 @@ reasoning.
 }
 
 \section{Projects}
+\project{2048 AI}{https://github.com/dcastro/twenty48}{
+  An AI for the 2048 game using minimax and alpha-beta pruning, as described by John Hughes in the paper "Why Functional Programming Matters".
+  The AI was written in Haskell and runs in a Yesod backend.
+  The decisions are streamed to the browser via a websockets connection.
+  The user's scores are saved in a PostgreSQL database.
+  Deployed on AWS using Docker.
+  \newline
+  Demo: \barelink{https://2048.diogocastro.com/}.
+}
 \project{MetroTasks}{https://www.microsoft.com/store/p/metrotasks/9wzdncrdfxdk}{
   Metro Tasks is a productivity application for Windows 8 / Windows RT that
   helps you keep track of your to-do's. The app features synchronisation with
@@ -243,6 +241,4 @@ reasoning.
 
 \end{document}
 
-
 %% end of file `template.tex'.
-
