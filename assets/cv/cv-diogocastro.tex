@@ -106,7 +106,7 @@
   Developed RESTful web services in Scala, using the \code{cats} framework and Akka HTTP, deployed using Docker.%
   \para
   Worked on a service that aimed to augment Apache Druid, a timeseries database, with features such as
-  access control, a simpler and safer query DSL, and converting monetary
+  access control, a simpler and safer query DSL, and automatic conversion of monetary
   metrics to multiple currencies.
   \para
   Authored a Scala library for calculating the delta of any two values of a given type
@@ -164,6 +164,9 @@
 \project{haskell-flatbuffers}{https://hackage.haskell.org/package/flatbuffers}{
   Haskell implementation of FlatBuffers, a protocol for memory efficient
   serialisation, originally designed by Google.
+  It uses TemplateHaskell for generating code from a given schema,
+  \code{megaparsec} for parsing schemas and \code{binary} for low-level
+  bytestring manipulation.
 }
 \project{csi-init}{https://github.com/dcastro/csi-init}{
   Csi-init is a simple command line tool written in Haskell, which allows you to
@@ -179,10 +182,9 @@
   implemented as a ring buffer.
 }
 \project{Contributed to AutoFixture}{https://github.com/AutoFixture/AutoFixture}{
-  AutoFixture is an open source library for .NET designed to minimise the
-  'Arrange' phase of your unit tests in order to maximise maintainability. Its
-  primary goal is to allow developers to focus on what is being tested rather than
-  how to setup the test scenario, by making it easier to create complex object graphs
+  AutoFixture is a .NET library designed to minimise the
+  'Arrange' phase of unit tests in order to maximise maintainability.
+  It leverages runtime reflection to create complex object graphs
   containing randomised test data.
 }
 \project{JSend WebApi \& Client}{https://github.com/dcastro/JSendWebApi}{
@@ -221,33 +223,33 @@
 }
 
 \section{Trainings}
-\cventry{2015}{Advanced C\# Course}{Instil Software}{}{}{
-  Focused on concurrency, functional programming in C\#, LINQ.
-}
 \cventry{2016}{JavaScript Training}{Instil Software}{}{}{
   Functional programming in JS, prototype inheritance, Angular.
 }
+\cventry{2015}{Advanced C\# Course}{Instil Software}{}{}{
+  Focused on concurrency, functional programming in C\#, LINQ.
+}
 
 \section{Certificates}
-\cventry{2013}{Functional Programming Principles in Scala}{Martin Odersky, École Polytechnique Fédérale de Lausanne}{Coursera}{}{}
 \cventry{2014}{Microsoft Certified Professional - Programming in C\#}{Microsoft}{}{}{}
+\cventry{2013}{Functional Programming Principles in Scala}{Martin Odersky, École Polytechnique Fédérale de Lausanne}{Coursera}{}{}
 
 \section{Education}
 \cventry{2007-2013}{Master's in Informatics and Computing Engineering}{Faculty of Engineering of the University of Porto}{Portugal}{}{}
 
 \section{Skills}
 \cvitem{Languages}{
-  General purpose: Scala, Haskell, C\#
+  General purpose: Haskell, Scala, C\#
   \newline{}
   Web: PureScript, JavaScript, TypeScript, CoffeeScript, CSS/Sass/Less
   \newline{}
   SQL: MS SQL Server, MySQL
 }
 \cvitem{Frameworks}{
-  Yesod, Akka HTTP, ASP.NET, Angular, Apache Camel, WinRT, ScalaCheck/QuickCheck
+  Yesod, Akka HTTP, ASP.NET, Angular, WinRT, ScalaCheck/QuickCheck/Hedgehog
 }
 \cvitem{Tools}{
-  Git, Docker, Elastic Search, Apache Druid, ActiveMQ
+  Git, Docker, Elastic Search, Apache Druid, Apache Camel, ActiveMQ
 }
 \cvitem{Other}{
   Experience in an agile setting, using Kanban and Lean principles.
