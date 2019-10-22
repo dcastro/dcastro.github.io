@@ -28,7 +28,7 @@ html {
     height: 100%;
 }
 
-// Typhography 
+// Typhography
 
 h1,
 h2,
@@ -85,7 +85,7 @@ a:focus {
     font-weight: 400;
 }
 
- // Navigation 
+ // Navigation
 
 .navbar {
     margin-bottom: 0;
@@ -152,7 +152,7 @@ a:focus {
     }
 }
 
- // Full Page Image Intro Section 
+ // Full Page Image Intro Section
 
  .intro {
     display: table;
@@ -248,7 +248,7 @@ a:focus {
     -moz-animation-timing-function: linear;
 }
 
-@-webkit-keyframes pulse {    
+@-webkit-keyframes pulse {
     0% {
         -webkit-transform: scale(1);
         transform: scale(1);
@@ -265,7 +265,7 @@ a:focus {
     }
 }
 
-@-moz-keyframes pulse {    
+@-moz-keyframes pulse {
     0% {
         -moz-transform: scale(1);
         transform: scale(1);
@@ -282,100 +282,21 @@ a:focus {
     }
 }
 
- // Content Sections 
+ // Content Sections
 
 #about {
     padding-top: 100px;
-}
-
-#contact {
-    padding-top: 150px;
-    padding-bottom: 150px;
-}
-
-#projects, #experience {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 400px;
 }
 
 @media(min-width: $small) {
     #about {
         padding-top: 150px;
-        padding-bottom: 200px;
-    }
-
-    #projects, #experience {
-        padding-bottom: 200px;
-    }
-
-    #contact {
-        padding-top: 200px;
         padding-bottom: 400px;
     }
 }
 
-// projects grid
-#projects {
-
-    #projects-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-    .project {
-        width: 33%;
-
-        padding-right: $spacing;
-        padding-left: $spacing;
-        padding-bottom: $spacing;
-    }
-
-    h3 {
-        border-bottom: 1px solid  $primary;
-        padding-bottom: $spacing;
-        margin-bottom: $spacing;
-    }
-
-    p {
-        font-size: 16px;
-    }
-
-    img {
-        margin-bottom: $spacing;
-        width: 80%;
-        border-radius: 5px;
-    }
-
-    .description {
-        margin-bottom: 10px;
-    }
-
-    .links {
-        margin-top: $spacing;
-        margin-bottom: $spacing;
-    }
-}
-
-@media(max-width: $small) {
-    #projects {
-        .project {
-            width: 100%;
-            padding-right: 0;
-            padding-left: 0;
-        }
-    }
-}
-
-@media (max-width: $medium) and (min-width: $small) {
-    #projects {
-        .project {
-            width: 50%;
-        }
-    }
-}
-
-// Buttons 
+// Buttons
 
 .btn {
     text-transform: uppercase;
@@ -427,7 +348,7 @@ a:focus {
     }
 }
 
- // Highlight Color Customization 
+ // Highlight Color Customization
 
 ::-moz-selection {
     text-shadow: none;
