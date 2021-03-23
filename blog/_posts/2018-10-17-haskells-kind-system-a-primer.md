@@ -6,6 +6,8 @@ issueId: 3
 
 <!-- markdownlint-disable MD002 -->
 
+This post is available in Chinese [here][chinese], thanks to [JulyTree](https://twitter.com/JulyTreee).
+
 In this post we'll explore Haskell's kind system,
 the similarities between types and kinds,
 and show how these can be leveraged to write safer and more reusable code.
@@ -667,3 +669,4 @@ These are [synonyms][star-synonym] for now, and the plan is to gradually phase o
  [linearity]: https://www.youtube.com/watch?v=t0mhvd3-60Y
  [levity]: https://www.youtube.com/watch?v=lSJwXZ7vWBw
  [levnum]: https://gist.github.com/dcastro/a7f9730981fa404415588224350dc918
+ [chinese]: http://julytreee.cn/2021/03/20/haskells-kind-system-a-primer/
