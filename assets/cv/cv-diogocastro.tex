@@ -17,6 +17,9 @@
 % character encoding
 \usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
 
+% allow arbitrary font sizes: https://tex.stackexchange.com/a/58088/23314
+\usepackage{lmodern}
+
 % adjust the page margins
 \usepackage[scale=0.75]{geometry}
 \setlength{\hintscolumnwidth}{3.5cm}                % if you want to change the width of the column with the dates
@@ -25,7 +28,7 @@
 % personal data
 \title{Curriculum Vitae}
 \name{Diogo}{Castro}
-\phone[mobile]{+44 7552081034}                     % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+\phone[mobile]{+351 914424559}                     % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
 \email{dc@diogocastro.com}                         % optional, remove / comment the line if not wanted
 \homepage{diogocastro.com}                         % optional, remove / comment the line if not wanted
 \social[github]{dcastro}                           % optional, remove / comment the line if not wanted
@@ -80,14 +83,16 @@
 %----------------------------------------------------------------------------------
 \begin{document}
 
+\setlength{\footskip}{43.49998pt}.
+
 %-----       resume       ---------------------------------------------------------
 \makecvtitle
 
 \section{Summary}
 \cvitem{}{
-  I'm a Software Engineer based in Belfast, United Kingdom.
+  I'm a Software Engineer based in Porto, Portugal.
   \para
-  My professional journey began as a C\# developer, but Functional Programming (FP)
+  My professional journey began as a C\# developer, but Functional Programming
   soon piqued my interest and led me to learn Scala, Haskell, PureScript and
   even a bit of Idris.
   \para
@@ -96,21 +101,33 @@
   I also like teaching and I'm a big believer in "paying it forward".
   I've learned so much from many inspiring people, so I make it a point to
   share what I've learned with others.
-  To that end, I'm currently in charge of training new team members in Scala and FP,
-  do occasional presentations at work and aim to do more public speaking.
   \para
   I blog about FP and Haskell at \barelink{https://diogocastro.com/blog}.
 }
 
 \section{Experience}
-\cventry{Nov 2017-Present}{Principal Software Engineer}{SpotX}{Belfast, UK}{}{}
+\cventry{April 2020-Present}{Team Lead, Software Engineer}{Serokell}{Remote}{}{
+  Lead the internal-dev team in developing and maintaining several open-source libraries and
+  applications written in Haskell and built with Nix.
+  \para
+  Helped grow the Haskell ecosystem for the Tezos blockchain by developing a
+  varied set of tools:
+  a parser for the Michelson language, a typechecker, an in-memory emulator, a REPL,
+  a test framework for smart contracts, a client library for interacting with the chain, among others.
+  \para
+  Implemented smart contracts for the Tezos blockchain, such as a constant function market maker.
+  \para
+  Helped onboarding new members and organized study groups.
+}
+
+\clearpage
+
+\cventry{Nov 2017-April 2020}{Principal Software Engineer}{SpotX}{Belfast, UK}{}{}
 \cventry{}{Senior Software Engineer}{SpotX}{Belfast, UK}{}{
   Developed RESTful web services in Scala, using the \code{cats}/\code{cats-effect} framework and Akka HTTP.
   Used Apache Kafka for publishing of events, and Prometheus/Grafana for monitoring.
   \para
-  Worked on a service that aimed to augment Apache Druid, a timeseries database, with features such as
-  access control, a safer and simpler query DSL, and automatic conversion of monetary
-  metrics to multiple currencies.
+  Worked on a service that aimed to augment and enhance Apache Druid, a timeseries database.
   \para
   Authored a Scala library for calculating the delta of any two values of a given type
   using Shapeless, a library for generic programming.
@@ -120,29 +137,25 @@
   building an intuition of how to program with functions and equational
   reasoning.
   \para
-  I also train new hires and help them bridge the gap between what they already know
+  Trained new hires and help them bridge the gap between what they already know
   and the world of FP in Scala.
 }
-
-\clearpage
 
 \cventry{May 2013-Nov 2017}{Senior Software Engineer}{NantHealth}{Belfast, UK}{}{}
 \cventry{}{Software Engineer}{NantHealth}{Belfast, UK}{}{
   Responsible for designing, unit testing, implementing and deploying a variety of applications, such as:
   \begin{itemize}
-    \item RESTful APIs, using ASP.NET Web API, ActiveMQ and Couchbase, MS SQL Server;
-    \item Front-end single-page applications, using AngularJS, JavaScript / TypeScript, LESS;
-    \item Internal libraries (e.g. for standardised logging and messaging) written in C\#;
-    \item An internal framework that acts as a concurrent general-purpose service
-    host, handling multiple cross-cutting concerns;
+    \item RESTful APIs, using ASP.NET Web API, ActiveMQ, Couchbase, and MS SQL Server;
+    \item Front-end single-page applications, using AngularJS, TypeScript, LESS;
+    \item Internal libraries written in C\#;
     \item Routing of messages between applications using Java and Apache Camel.
   \end{itemize}
   \spacing I've also built some small internal tools to help streamline my coworkers' and
   my day-to-day activities, using Scala, Haskell and PureScript.
   \para
   I helped organise a weekly Brown Bag Session during lunch hour, in which
-  people talk about topics that interest them. Sometimes brought a kata (i.e. an
-  exercise) for people to solve in a language of their choice, and share their
+  people talk about topics that interest them. Sometimes brought an exercise for people to
+  solve in a language of their choice, and share their
   solutions at the end.
 }
 \cventry{Aug 2012-Mar 2013}{Researcher}{Fraunhofer}{Porto, Portugal}{}{
@@ -151,6 +164,8 @@
   Developed complex heuristics to evaluate landmarks data retrieved from OpenStreetMap,
   and used the device's sensors (e.g., gyroscope, accelerometer) to locate and navigate the user.
 }
+
+\clearpage
 
 \section{Talks}
 \cventry{Jan 2019}{The Haskell Epidemic}{The Crystal Ball BASH, Belfast}{}{}{
@@ -161,100 +176,8 @@
   Slides: \barelink{https://talks.diogocastro.com/the-haskell-epidemic/}
 }
 
-\clearpage
-
-\section{Open Source}
-\project{haskell-flatbuffers}{https://hackage.haskell.org/package/flatbuffers}{
-  Haskell implementation of FlatBuffers, a protocol for memory efficient
-  serialisation, originally designed by Google.
-  It uses TemplateHaskell for generating code from a given schema,
-  \code{megaparsec} for parsing schemas and \code{binary} for low-level
-  bytestring manipulation.
-}
-\project{csi-init}{https://github.com/dcastro/csi-init}{
-  Csi-init is a simple command line tool written in Haskell, which allows you to
-  launch Roslyn's C\# REPL (csi) preloaded with all the assemblies found in one or
-  more directories.
-}
-\project{sequences}{https://github.com/dcastro/sequences}{
-  Sequences is a port of Haskell's immutable lazy lists or Scala's \code{Stream[+A]} to C\#.
-}
-\project{DequeNET}{https://github.com/dcastro/DequeNET}{
-  A concurrent lock-free deque (double-ended queue) implementation in C\# -
-  push/pop/peek operations in constant time O(1) - and a regular deque
-  implemented as a ring buffer.
-}
-\project{Contributed to AutoFixture}{https://github.com/AutoFixture/AutoFixture}{
-  AutoFixture is a .NET library designed to minimise the
-  'Arrange' phase of unit tests in order to maximise maintainability.
-  It leverages runtime reflection to create complex object graphs
-  containing randomised test data.
-}
-\project{JSend WebApi \& Client}{https://github.com/dcastro/JSendWebApi}{
-  JSend.WebApi is an extension of ASP.NET Web API for designing APIs using the
-  JSend protocol (\barelink{https://labs.omniti.com/labs/jsend}).
-  JSend.Client is a library for consuming JSend APIs.
-}
-\cvitem{\textbf{Smaller contributions}}{
-  \begin{itemize}
-    \item mono-traversable: A Haskell library with typeclasses for working with
-    both polymorphic and monomorphic containers.
-    \item Monocle: An optics library for Scala, inspired by Haskell's \code{lens}.
-    \item Circe: A JSON library for Scala.
-    \item Refined: A refinement types library for Scala, i.e. enables
-    the constraining of types using type-level predicates.
-    \item Newts: Scala library with commonly used newtypes and associated typeclass instances.
-  \end{itemize}
-}
-
-\clearpage
-
-\section{Projects}
-\project{2048 AI}{https://github.com/dcastro/twenty48}{
-  An AI for the 2048 game using minimax and alpha-beta pruning, as described by John Hughes in the paper "Why Functional Programming Matters".
-  The AI was written in Haskell and runs in a Yesod backend.
-  The decisions are streamed to the browser via a websockets connection.
-  The user's scores are saved in a PostgreSQL database.
-  Deployed on AWS using Docker.
-  \newline
-  Demo: \barelink{https://2048.diogocastro.com/}.
-}
-
-\section{Trainings}
-\cventry{2016}{JavaScript Training}{Instil Software}{}{}{
-  Functional programming in JS, prototype inheritance, Angular.
-}
-\cventry{2015}{Advanced C\# Course}{Instil Software}{}{}{
-  Focused on concurrency, functional programming in C\#, LINQ.
-}
-
-\section{Certificates}
-\cventry{2014}{Microsoft Certified Professional - Programming in C\#}{Microsoft}{}{}{}
-\cventry{2013}{Functional Programming Principles in Scala}{Martin Odersky, École Polytechnique Fédérale de Lausanne}{Coursera}{}{}
-
 \section{Education}
 \cventry{2007-2013}{Master's in Informatics and Computing Engineering}{Faculty of Engineering of the University of Porto}{Portugal}{}{}
-
-\section{Skills}
-\cvitem{Languages}{
-  General purpose: Haskell, Scala, C\#
-  \newline{}
-  Web: PureScript, JavaScript, TypeScript, CoffeeScript, CSS/Sass/Less
-  \newline{}
-  SQL: MS SQL Server, MySQL
-}
-\cvitem{Frameworks}{
-  Yesod, cats, Akka HTTP, ScalaCheck/QuickCheck/Hedgehog
-}
-\cvitem{Tools}{
-  Git, Docker, Elastic Search, Apache Druid, Apache Camel, ActiveMQ
-}
-\cvitem{Other}{
-  Experience in an agile setting, using Kanban and Lean principles.
-  Property-based testing, test-driven development.
-  Typed functional programming.
-}
-
 
 \end{document}
 
