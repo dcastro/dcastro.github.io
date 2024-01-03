@@ -43,17 +43,10 @@
 
 \newcommand*{\spacing}{\vspace{.7ex}}
 
-\newcommand*{\project}[3]{
-  \cvitem{\textbf{#1}}{
-    \barelink{#2}
-    \para
-    #3
-    }
-}
-
 \newcommand*{\code}{\texttt}
 
-\newcommand*{\barelink}[1]{\protect\href{#1}{#1}}
+\newcommand*{\barelink}[1]{\bluelink{#1}{#1}}
+\newcommand*{\bluelink}[2]{\protect\href{#1}{\color{cyan}{#2}}}
 
 \newcommand*{\cvitemspace}{1em}
 
@@ -83,6 +76,14 @@
 %----------------------------------------------------------------------------------
 \begin{document}
 
+% For some reason, the page counter is off by one
+% (it's numering pages as x/4 when there are only 3 pages in total).
+%
+% This works around the issue by manually setting the total
+% page number to 3.
+% See: https://stackoverflow.com/a/68292199/857807
+\fancyfoot[r]{\parbox[b]{\pagenumberwidth}{\color{color2}\pagenumberfont\strut\thepage/3}}
+
 \setlength{\footskip}{43.49998pt}.
 
 %-----       resume       ---------------------------------------------------------
@@ -93,8 +94,8 @@
   I'm a Software Engineer based in Porto, Portugal.
   \para
   My professional journey began as a C\# developer, but Functional Programming
-  soon piqued my interest and led me to learn Scala, Haskell, PureScript and
-  even a bit of Idris.
+  soon piqued my interest and led me to learn Scala, Haskell, and PureScript.
+  As of late, I've been exploring and using Rust for commercial projects.
   \para
   I love building robust, reliable and maintainable applications.
   \para
@@ -107,17 +108,23 @@
 
 \section{Experience}
 \cventry{April 2020-Present}{Team Lead, Software Engineer}{Serokell}{Remote}{}{
-  Lead the internal-dev team in developing and maintaining several open-source libraries and
-  applications written in Haskell and built with Nix.
+  Led the internal-dev team in developing and maintaining several open-source libraries and
+  applications written in Haskell, such as
+  \bluelink{https://github.com/serokell/universum}{universum},
+  \bluelink{https://github.com/serokell/xrefcheck/}{xrefcheck},
+  and
+  \bluelink{https://github.com/serokell/tzbot}{tzbot}.
+  Authored \bluelink{https://github.com/serokell/tztime}{tztime}.
   \para
-  Helped grow the Haskell ecosystem for the Tezos blockchain by developing a
+  Led the development of \bluelink{https://certification.serokell.io/}{Serokell Certification},
+  a program for assessing and certifying a candidate's Haskell skills.
+  \para
+  Helped grow the Haskell and Rust ecosystems for the Tezos blockchain by developing a
   varied set of tools:
-  a parser for the Michelson language, a typechecker, an in-memory emulator, a REPL,
+  a parser, typechecker and interpreter for the Michelson language, a REPL,
   a test framework for smart contracts, a client library for interacting with the chain, among others.
   \para
-  Implemented smart contracts for the Tezos blockchain, such as a constant function market maker.
-  \para
-  Helped onboarding new members and organized study groups.
+  Led an effort for onboarding new hires and interns.
 }
 
 \clearpage
