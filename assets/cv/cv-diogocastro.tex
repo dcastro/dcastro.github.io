@@ -5,6 +5,24 @@
 % conditions of the LaTeX Project Public License version 1.3c,
 % available at http://www.latex-project.org/lppl/.
 
+% Install instructions:
+% - install texlive using these instructions: https://www.tug.org/texlive/quickinstall.html
+%   note: don't use `apt install` because it may not have the latest version
+%
+% perl install-tl
+% - Add `/usr/local/texlive/2021/bin/x86_64-linux` to the PATH
+% sudo chown -R dc  /usr/local/texlive/2021/tlpkg/
+% tlmgr init-usertree
+% tlmgr install etoolbox --verify-repo=none
+% pdflatex cv-diogocastro.tex
+% - Do a complete reboot (or kill vscode) to allow vscode to pick up
+%   the new `PATH`
+%
+% May need these perl packages to make `latexindent` work:
+% sudo cpan YAML::Tiny
+% sudo cpan File::HomeDir
+% sudo cpan Unicode::GCString
+
 
 \documentclass[12pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
@@ -122,7 +140,7 @@
   Helped grow the Haskell and Rust ecosystems for the Tezos blockchain by developing a
   varied set of tools:
   a parser, typechecker and interpreter for the Michelson language, a REPL,
-  a test framework for smart contracts, a client library for interacting with the chain, among others.
+  a test framework for smart contracts, a client library for interacting with the chain, among others.%
   \para
   Led an effort for onboarding new hires and interns.
 }
