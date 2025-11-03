@@ -1,7 +1,7 @@
 ## Install
 
 ```plain
-> gem install jekyll
+> gem install bundler:1.17.3
 > bundle install
 > bundle exec jekyll serve --livereload
 ```

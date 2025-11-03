@@ -1,35 +1,35 @@
 # Dependencies
-markdown:         kramdown
-highlighter:      rouge
+markdown: kramdown
+highlighter: rouge
 
 kramdown:
-  input:          GFM
+  input: GFM
 
-plugins:          [jekyll-coffeescript]
+plugins: [jekyll-coffeescript]
 
-show_drafts:      false
+show_drafts: false
 
 # Permalinks
-permalink:        pretty
+permalink: pretty
 
 # Setup
-title:            dcastro
-url:              http://www.diogocastro.com
-blogurl:          /blog/
-atomurl:          /blog/atom.xml
+title: dcastro
+url: http://www.diogocastro.com
+blogurl: /blog/
+atomurl: /blog/atom.xml
 
 author:
-  name:           'Diogo Castro'
-  url:            http://www.diogocastro.com
-  email:          dc@diogocastro.com
+  name: 'Diogo Castro'
+  url: http://www.diogocastro.com
+  email: dc@diogocastro.com
 
 sass:
-  style:          compressed
+  style: compressed
 
 excerpt_separator: <!--more-->
 
 # Custom vars
-repository:       dcastro/dcastro.github.io
+repository: dcastro/dcastro.github.io
 github:
-  comments_url:    https://api.github.com/repos/dcastro/dcastro.github.io/issues/<issue-id>/comments?per_page=100
-  issue_url:       https://github.com/dcastro/dcastro.github.io/issues/<issue-id>
+  comments_url: https://api.github.com/repos/dcastro/dcastro.github.io/issues/<issue-id>/comments?per_page=100
+  issue_url: https://github.com/dcastro/dcastro.github.io/issues/<issue-id>
