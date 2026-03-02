@@ -20,5 +20,5 @@ To compile the latex diagrams, install pdflatex and then:
 
 [Solution](https://github.com/jekyll/jekyll/issues/3985#issuecomment-294266874):
 
-* Download <https://curl.haxx.se/ca/cacert.pem>
+* Download <https://curl.se/ca/cacert.pem>
 * Add a environment variable SSL_CERT_FILE values /path/to/cacert.pem

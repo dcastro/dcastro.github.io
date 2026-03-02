@@ -421,7 +421,7 @@ Flexibility comes at the expense of analytical power. [Constraints liberate, lib
 Thanks to [George Wilson][george-wilson] for his amazing [talk][george-wilson-talk] which mentions a couple of the points
 I've reiterated here, and got me thinking what other differences there were between typeclasses and other forms of polymorphism.
 
- [haskell-typeclasses]: http://book.realworldhaskell.org/read/using-typeclasses.html
+ [haskell-typeclasses]: https://book.realworldhaskell.org/read/using-typeclasses.html
  [scala-typeclasses]: https://leanpub.com/fpmortals/read#leanpub-auto-polymorphic-functions
  [fundeps]: https://wiki.haskell.org/Functional_dependencies
  [amm]: http://ammonite.io/

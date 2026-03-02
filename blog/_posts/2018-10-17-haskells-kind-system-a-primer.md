@@ -658,7 +658,7 @@ These are [synonyms][star-synonym] for now, and the plan is to gradually phase o
  [datakinds-disambiguation]: https://downloads.haskell.org/~ghc/8.4.3/docs/html/users_guide/glasgow_exts.html#distinguishing-between-types-and-constructors
  [dense]: https://hackage.haskell.org/package/safe-money-0.7/docs/Money.html#t:Dense
  [discrete]: https://hackage.haskell.org/package/safe-money-0.7/docs/Money.html#t:Discrete-39-
- [scales]: https://ren.zone/articles/safe-money#scales
+ [scales]: https://web.archive.org/web/20250504022850/https://ren.zone/articles/safe-money#scales
  [box]: https://downloads.haskell.org/~ghc/7.6.1/docs/html/users_guide/promotion.html
  [idris-book]: https://www.manning.com/books/type-driven-development-with-idris
  [the-little-typer]: https://mitpress.mit.edu/books/little-typer
@@ -669,4 +669,4 @@ These are [synonyms][star-synonym] for now, and the plan is to gradually phase o
  [linearity]: https://www.youtube.com/watch?v=t0mhvd3-60Y
  [levity]: https://www.youtube.com/watch?v=lSJwXZ7vWBw
  [levnum]: https://gist.github.com/dcastro/a7f9730981fa404415588224350dc918
- [chinese]: http://julytreee.cn/2021/03/20/haskells-kind-system-a-primer/
+ [chinese]: https://julytreee.cn/2021/03/20/haskells-kind-system-a-primer/

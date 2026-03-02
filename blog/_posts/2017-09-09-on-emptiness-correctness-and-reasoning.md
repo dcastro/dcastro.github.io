@@ -163,19 +163,19 @@ Eric Lippert, former member of the C# language design team, [explained in great 
 >
 > \- Eric Lippert
 
- [retrofit-probs]: https://archive.today/FkYfR
+ [retrofit-probs]: https://archive.ph/FkYfR
  [illegal-states]: https://vimeo.com/14313378
  [java optional 1]: https://gist.github.com/oxbowlakes/8d13fae255412e00c59ae6f536a84773
- [java optional 2]: https://developer.atlassian.com/blog/2015/08/optional-broken/
+ [java optional 2]: https://web.archive.org/web/20181121192709/https://developer.atlassian.com/blog/2015/08/optional-broken/
  [java optional 3]: https://stackoverflow.com/q/24547673/857807
  [csharp proposal]: https://github.com/dotnet/csharplang/blob/master/proposals/nullable-reference-types.md
  [type system bug]: https://hackernoon.com/java-is-unsound-28c84cb2b3f
  [billion dollar mistake]: https://en.wikipedia.org/wiki/Null_pointer#History
  [nat type]: https://www.stackage.org/haddock/lts-9.2/base-4.9.1.0/Numeric-Natural.html
  [option-csharp]: https://github.com/louthy/language-ext
- [functional-java]: http://www.functionaljava.org/
+ [functional-java]: https://github.com/functionaljava/functionaljava
 
- [prob-subvert]: https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science/
+ [prob-subvert]: https://lucid.co/techblog/2015/08/31/the-worst-mistake-of-computer-science/
  [prob-bomb]: https://softwareengineering.stackexchange.com/a/12785/101308
  [prob-aspnet]: https://github.com/aspnet/AspNetWebStack/blob/v3.2.3/src/System.Web.Http/Controllers/HttpControllerContext.cs#L23
  [prob-aspnet-tests]: https://github.com/aspnet/AspNetWebStack/blob/v3.2.3/test/System.Web.Http.Test/Controllers/HttpControllerContextTest.cs#L40
