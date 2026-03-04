@@ -1,0 +1,17 @@
+# List all recipes by default
+default:
+    just --list
+
+# Run basic checks
+checks:
+    ./scripts/check_doctest.sh
+    stack build doctest
+    stack exec doctest $(find src \( -name '*.lhs' -o -name '*.hs' \) -print)
+
+# Run all checks that should be done before a release
+release-checks:
+    just checks
+    # Build with `-Werror`
+    stack clean
+    stack build --fast --test --bench --no-run-tests --no-run-benchmarks --ghc-options "-Werror"
+    ./scripts/check_todos.sh
