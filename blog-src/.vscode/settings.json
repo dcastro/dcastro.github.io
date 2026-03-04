@@ -1,0 +1,27 @@
+{
+  // https://marketplace.visualstudio.com/items?itemName=emeraldwalk.RunOnSave
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        // Compile Literate Haskell files to markdown
+        "match": "\\.(lhs)$",
+        "cmd": "../scripts/run_pandoc.sh"
+      }
+    ]
+  },
+
+  /*
+    There seems to be an issue with "Reload Window".
+    On reload, it's not meant to kill background tasks - it leaves them running, and then reconnects the terminal to the task.
+    But for some reason, reconnection doesn't seem to be working for me.
+    https://github.com/microsoft/vscode/issues/180243
+
+    Which means the process will be left running, and after the reload we'll try launching a new task again,
+    which will fail because the port is already in use.
+    The first process will be left running forever.
+
+    To work around this, we disable reconnection.
+    This way, when we use "Reload Window", the process IS killed, and a new one will be started after the reload.
+  */
+  "task.reconnection": false
+}

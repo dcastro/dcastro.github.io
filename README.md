@@ -1,20 +1,26 @@
-## Install
+## Run
 
-```plain
-> gem install bundler:1.17.3
-> bundle install
-> bundle exec jekyll serve --livereload
+Build Template Haskell blog posts:
+
+```sh
+just release-build
 ```
 
-To compile the latex diagrams, install pdflatex and then:
+Build latex diagrams:
 
-```plain
-> brew install pdf2svg
-> cd img/diagrams
-> pdflatex -shell-escape -interaction=nonstopmode kind-system.tex
+```sh
+just latex
 ```
 
-## Issues
+Run locally with live reloading:
+
+```sh
+gem install bundler:1.17.3
+bundle install
+bundle exec jekyll serve --livereload
+```
+
+## Troubleshooting
 
 > SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed
 
