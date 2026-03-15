@@ -32,9 +32,9 @@ import Control.Monad.Base (liftBase)
 \end{code}
 
 [`MonadBaseControl`][mbc] is notoriously tricky to use correctly.
-It's really easy to misuse and end up introducing subtle unexpected behaviour or downright bugs, even in the hands of the more experienced.
+It's really easy to misuse and end up introducing subtle unexpected behaviour or downright bugs, even in the hands of the more experienced developers.
 
-The goal of this article is to establish a clear mental model of how to work with `MonadBaseControl`, recognize the dangers, and how to avoid them.
+The goal of this article is to establish a clear mental model of how to work with `MonadBaseControl`, recognize its dangers, and how to avoid them.
 
 Lastly, I'll leave you with recommendations for best practices, when to reach out for `MonadBaseControl`, and when not to.
 
@@ -53,7 +53,10 @@ Before we begin, let's define a couple of helper functions to make our examples 
 \begin{code}
 -- | Append a value to the state.
 appendToState :: MonadState [a] m => a -> m ()
-appendToState a = modify (<> [a])
+appendToState a =
+  -- For the purpose of this article, excuse the inefficiency.
+  -- A `DList` or `Seq` would be more appropriate.
+  modify (<> [a])
 
 -- | Print the current state with a label for context.
 printState :: Show s => String -> StateT s IO ()
@@ -112,7 +115,7 @@ Notice the parallels between this and the `StateT` version:
 
 1. Use `liftBaseWith` to capture the input state; this gives us `runInBase`, a closure over that state.
 2. `runInBase` will run an `m a` action with the input state, yielding an `IO (StM m a)` action.
-3. Call `foo` with the `IO (StM m a)` action.
+3. Call `foo` with the `IO (StM m a)` action [^1].
 4. Restore the output state with `restoreM`.
 
 Again, we're instantiating `foo` as `foo :: IO (StM m a) -> IO (StM m a)`, allowing the state to be threaded through.
@@ -361,7 +364,9 @@ bracket' acquire release use =
       (\st -> runInBase $ restoreM st >>= use)
 \end{code}
 
-It helps to see how exactly `bracket`'s type parameters are being instantiated here:
+In fact, this is the exact example given in the docs for [`control`][control].
+
+To understand it, it helps to see how exactly `bracket`'s type parameters are being instantiated here:
 
 ```hs
 bracket
@@ -490,7 +495,7 @@ If you can get away with using only stateless transformers, do it!
 None of the issues described here apply to stateless transformers (e.g., `ReaderT`, `LogT`).
 Forking state is innocuous, and there's no output state to restore afterwards.
 
-You often can avoid stateful transformers by replacing `StateT` with mutable variables and `ExceptT` with runtime exceptions.
+You often can avoid stateful transformers by replacing `StateT s` with mutable variables such as `ReaderT (IORef s)`, and `ExceptT` with runtime exceptions.
 
 You can constrain your functions with `StM m a ~ a` to rule out stateful transformers.
 This is what the "safe" module [`Control.Concurrent.Async.Lifted.Safe`][lifted-async-safe] from
@@ -510,7 +515,7 @@ Having to use the `runInBase` closure more than once is a dead giveaway that som
 Reimplementing the function in terms of simpler functions that only take 1 input action each _can_ sometimes work, but it's not guaranteed.
 
 For exception handling, I'd recommend avoiding `MonadBaseControl` and `lifted-base`.
-Instead, go with the `exceptions` package or, better yet, `safe-exceptions`.
+Instead, go with the `exceptions` package or, better yet, `safe-exceptions` for [safer handling of async exceptions][safe-exceptions].
 You get the best of both worlds: power (it supports stateful transformers) and safety (it behaves sensibly with regard to state).
 
 ---
@@ -559,7 +564,7 @@ testSequential = do
 \end{code}
 
 [mbc]: https://hackage.haskell.org/package/monad-control/docs/Control-Monad-Trans-Control.html#t:MonadBaseControl
-[control]: https://hackage.haskell.org/package/monad-control/docs/Control-Monad-Trans-Control.html#v:control
+[control]: https://hackage.haskell.org/package/monad-control-1.0.3.1/docs/Control-Monad-Trans-Control.html#v:control
 [concurrently]: https://hackage.haskell.org/package/async/docs/Control-Concurrent-Async.html#v:concurrently
 [bracket-src]: https://hackage.haskell.org/package/ghc-internal-9.1201.0/docs/src/GHC.Internal.Control.Exception.Base.html#bracket
 [generalBracket]: https://hackage-content.haskell.org/package/exceptions/docs/Control-Monad-Catch.html#v:generalBracket
@@ -567,3 +572,12 @@ testSequential = do
 [monad-unliftio]: https://hackage.haskell.org/package/unliftio
 [alexis-mbc]: https://lexi-lambda.github.io/blog/2019/09/07/demystifying-monadbasecontrol/
 [lhs-src]: https://github.com/dcastro/dcastro.github.io/blob/master/blog-src/src/Mbc.lhs
+[safe-exceptions]: https://github.com/fpco/safe-exceptions?tab=readme-ov-file#goals
+
+---
+
+[^1]:
+  `StM m a` is an associated type family of `MonadBaseControl`.
+  It represents a value `a` enriched with the state of a monad `m`.
+  For example, `StM (StateT s IO) a ~ (a, s)`, and `StM (ExceptT e IO) a ~ Either e a`.
+  For stateless monads, `StM m a` evaluates to `a`: `StM (ReaderT r IO) a ~ a`.

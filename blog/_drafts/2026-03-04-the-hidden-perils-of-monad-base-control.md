@@ -7,10 +7,10 @@ title: The hidden perils of MonadBaseControl
 [`MonadBaseControl`](https://hackage.haskell.org/package/monad-control/docs/Control-Monad-Trans-Control.html#t:MonadBaseControl)
 is notoriously tricky to use correctly. It’s really easy to misuse and
 end up introducing subtle unexpected behaviour or downright bugs, even
-in the hands of the more experienced.
+in the hands of the more experienced developers.
 
 The goal of this article is to establish a clear mental model of how to
-work with `MonadBaseControl`, recognize the dangers, and how to avoid
+work with `MonadBaseControl`, recognize its dangers, and how to avoid
 them.
 
 Lastly, I’ll leave you with recommendations for best practices, when to
@@ -37,7 +37,10 @@ examples easier to read:
 ``` haskell
 -- | Append a value to the state.
 appendToState :: MonadState [a] m => a -> m ()
-appendToState a = modify (<> [a])
+appendToState a =
+  -- For the purpose of this article, excuse the inefficiency.
+  -- A `DList` or `Seq` would be more appropriate.
+  modify (<> [a])
 
 -- | Print the current state with a label for context.
 printState :: Show s => String -> StateT s IO ()
@@ -99,7 +102,7 @@ Notice the parallels between this and the `StateT` version:
     `runInBase`, a closure over that state.
 2.  `runInBase` will run an `m a` action with the input state, yielding
     an `IO (StM m a)` action.
-3.  Call `foo` with the `IO (StM m a)` action.
+3.  Call `foo` with the `IO (StM m a)` action [^1].
 4.  Restore the output state with `restoreM`.
 
 Again, we’re instantiating `foo` as
@@ -208,7 +211,7 @@ timed :: IO a -> IO (a, NominalDiffTime)
 
 To avoid the trap described in the last section, we’re going to be using
 the higher-order combinator
-[`control`](https://hackage.haskell.org/package/monad-control/docs/Control-Monad-Trans-Control.html#v:control),
+[`control`](https://hackage.haskell.org/package/monad-control-1.0.3.1/docs/Control-Monad-Trans-Control.html#v:control),
 which ensures we *do* call `restoreM`.
 
 ``` haskell
@@ -365,8 +368,11 @@ bracket' acquire release use =
       (\st -> runInBase $ restoreM st >>= use)
 ```
 
-It helps to see how exactly `bracket`’s type parameters are being
-instantiated here:
+In fact, this is the exact example given in the docs for
+[`control`](https://hackage.haskell.org/package/monad-control-1.0.3.1/docs/Control-Monad-Trans-Control.html#v:control).
+
+To understand it, it helps to see how exactly `bracket`’s type
+parameters are being instantiated here:
 
 ``` hs
 bracket
@@ -504,8 +510,9 @@ of the issues described here apply to stateless transformers (e.g.,
 `ReaderT`, `LogT`). Forking state is innocuous, and there’s no output
 state to restore afterwards.
 
-You often can avoid stateful transformers by replacing `StateT` with
-mutable variables and `ExceptT` with runtime exceptions.
+You often can avoid stateful transformers by replacing `StateT s` with
+mutable variables such as `ReaderT (IORef s)`, and `ExceptT` with
+runtime exceptions.
 
 You can constrain your functions with `StM m a ~ a` to rule out stateful
 transformers. This is what the “safe” module
@@ -532,10 +539,19 @@ each *can* sometimes work, but it’s not guaranteed.
 
 For exception handling, I’d recommend avoiding `MonadBaseControl` and
 `lifted-base`. Instead, go with the `exceptions` package or, better yet,
-`safe-exceptions`. You get the best of both worlds: power (it supports
-stateful transformers) and safety (it behaves sensibly with regard to
-state).
+`safe-exceptions` for [safer handling of async
+exceptions](https://github.com/fpco/safe-exceptions?tab=readme-ov-file#goals).
+You get the best of both worlds: power (it supports stateful
+transformers) and safety (it behaves sensibly with regard to state).
 
 ------------------------------------------------------------------------
 
 `MonadBaseControl` is a big hammer; wield it wisely.
+
+------------------------------------------------------------------------
+
+[^1]: `StM m a` is an associated type family of `MonadBaseControl`. It
+    represents a value `a` enriched with the state of a monad `m`. For
+    example, `StM (StateT s IO) a ~ (a, s)`, and
+    `StM (ExceptT e IO) a ~ Either e a`. For stateless monads, `StM m a`
+    evaluates to `a`: `StM (ReaderT r IO) a ~ a`.
