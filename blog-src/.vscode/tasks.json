@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            // NOTE: we need to enable automatic tasks in the user profile settings with:
+            // ```
+            // "task.allowAutomaticTasks": "on"
+            // ```
+            "label": "Start Jekyll",
+            "type": "shell",
+            /*
+                We can't use `justfile` for long running tasks in VSCode.
+                When we terminate a vscode task, it sends `SIGHUP` to the process.
+                https://github.com/microsoft/vscode/issues/206607#issuecomment-2941275558
+
+                However, Justfile does not forward `SIGHUP` to the child process because it assumes
+                `SIGHUP` was already sent to the child process. This causes the child process to continue running
+                in the background even after terminating the task in VSCode.
+                https://github.com/casey/just/issues/2473#issuecomment-2726063123
+            */
+            "command": "../scripts/run_jekyll.sh",
+            "isBackground": true,
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "runOptions": {
+                "runOn": "folderOpen",
+                "instanceLimit": 1
+            }
+        },
+    ]
+}

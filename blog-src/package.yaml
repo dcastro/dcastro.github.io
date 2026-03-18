@@ -1,0 +1,29 @@
+name: blog-src
+version: 0.1.0.0
+github: 'githubuser/blog-src'
+author: 'Author name here'
+maintainer: 'example@example.com'
+copyright: '2025 Author name here'
+
+ghc-options:
+  - -Weverything
+  - -Wno-name-shadowing
+  - -Wno-missing-import-lists
+  - -Wno-missing-export-lists
+  - -Wno-safe
+  - -Wno-missing-safe-haskell-mode
+  - -Wno-implicit-prelude
+  - -Wno-missing-kind-signatures
+  - -Wno-unsafe
+
+library:
+  source-dirs: src
+  dependencies:
+    - base
+    - monad-control
+    - transformers-base
+    - lifted-base
+    - mtl
+    - exceptions
+    - async
+    - time

@@ -9,6 +9,9 @@ plugins: [jekyll-coffeescript]
 
 show_drafts: false
 
+exclude:
+  - blog-src
+
 # Permalinks
 permalink: pretty
 
