@@ -1,6 +1,6 @@
 ## Run
 
-Build Template Haskell blog posts:
+Build Literate Haskell blog posts:
 
 ```sh
 just release-build
