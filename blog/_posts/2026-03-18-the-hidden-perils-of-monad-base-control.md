@@ -4,6 +4,9 @@ layout: post
 title: The hidden perils of MonadBaseControl
 ---
 
+This article is also available on [Serokel’s
+blog](https://serokell.io/blog/the-hidden-perils-of-monadbasecontrol).
+
 [`MonadBaseControl`](https://hackage.haskell.org/package/monad-control/docs/Control-Monad-Trans-Control.html#t:MonadBaseControl)
 is notoriously tricky to use correctly. It’s really easy to misuse and
 end up introducing subtle unexpected behaviour or downright bugs, even

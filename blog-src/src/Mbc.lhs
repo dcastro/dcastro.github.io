@@ -31,6 +31,8 @@ import Control.Monad.Base (liftBase)
 -- >>> :set -XGHC2024 -XNumDecimals
 \end{code}
 
+This article is also available on [Serokel's blog](https://serokell.io/blog/the-hidden-perils-of-monadbasecontrol).
+
 [`MonadBaseControl`][mbc] is notoriously tricky to use correctly.
 It's really easy to misuse and end up introducing subtle unexpected behaviour or downright bugs, even in the hands of the more experienced developers.
 
