@@ -61,6 +61,14 @@
 
 \newcommand*{\spacing}{\vspace{.7ex}}
 
+\newcommand*{\project}[3]{
+  \cvitem{\textbf{#1}}{
+    \barelink{#2}
+    \para
+    #3
+    }
+}
+
 \newcommand*{\code}{\texttt}
 
 \newcommand*{\barelink}[1]{\bluelink{#1}{#1}}
@@ -202,6 +210,29 @@
   Recording: \barelink{https://youtu.be/nnoOF1HeAls}
   \para
   Slides: \barelink{https://talks.diogocastro.com/the-haskell-epidemic/}
+}
+
+\section{Open Source}
+\project{linear-locks}{https://hackage.haskell.org/package/linear-locks}{
+  Leverages Haskell's Linear Types to provide locking primitives that are statically guaranteed to be deadlock-free.
+}
+\project{haskell-flatbuffers}{https://hackage.haskell.org/package/flatbuffers}{
+  Haskell implementation of FlatBuffers, a protocol for memory efficient
+  serialisation, originally designed by Google.
+  It uses TemplateHaskell for generating code from a given schema,
+  \code{megaparsec} for parsing schemas and \code{binary} for low-level
+  bytestring manipulation.
+}
+\project{lsp-xreferee}{https://github.com/dcastro/lsp-xreferee}{
+  LSP server written in Haskell for validating cross references throughout a git repository.
+}
+\project{tztime}{https://hackage.haskell.org/package/tztime}{
+  Haskell library for safely manipulating dates and time in a timezone-aware fashion, avoiding common pitfalls
+  such as ambiguous or invalid datetimes.
+}
+\project{tzbot}{https://github.com/serokell/tzbot}{
+  Slack bot that detects messages with references to some point in time and automatically converts
+  them to the reader's timezone.
 }
 
 \section{Education}
