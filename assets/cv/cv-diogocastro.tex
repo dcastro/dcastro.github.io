@@ -38,6 +38,9 @@
 % allow arbitrary font sizes: https://tex.stackexchange.com/a/58088/23314
 \usepackage{lmodern}
 
+% Used to ensure two `cventry`s appear together on the same page.
+\usepackage{needspace}
+
 % adjust the page margins
 \usepackage[scale=0.75]{geometry}
 \setlength{\hintscolumnwidth}{3.5cm}                % if you want to change the width of the column with the dates
@@ -138,7 +141,6 @@
 % coffer
 % sqlite-simple-effectful
 
-
 \section{Experience}
 \cventry{April 2020-Present}{Team Lead, Software Engineer}{Serokell}{Remote}{}{
   Led the internal development team in developing and maintaining several open-source libraries and
@@ -149,7 +151,7 @@
   Authored \bluelink{https://github.com/serokell/tztime}{tztime}.
   \para
   Led the development of \bluelink{https://certification.haskell.foundation}{Haskell Certification},
-  a platform for assessing and certifying a candidate's Haskell skills (now operated by the Haskell Foundation).
+  a platform for assessing a candidate's Haskell skills (now operated by the Haskell Foundation).
   \para
   Developed a Rust application using Tauri for controlling
   Molecular Rotational Resonance (MRR) spectroscopy instruments,
@@ -160,13 +162,16 @@
   a parser, typechecker and interpreter for the Michelson language, a REPL,
   a test framework for smart contracts, a client library for interacting with the chain, among others.%
   \para
+  Helped improve and diagnose performance issues in a PostgreSQL / AlloyDB event-sourced database.
+  \para
   Contributed to Serokell's blog.
   \para
   Led an effort to onboard new hires and interns.
 }
 
-\clearpage
-
+% Keep these two `cventry`s together on the same page.
+% If not enough vertical space can be reserved, then move both to the next page.
+\needspace{5\baselineskip}
 \cventry{Nov 2017-April 2020}{Principal Software Engineer}{SpotX}{Belfast, UK}{}{}
 \cventry{}{Senior Software Engineer}{SpotX}{Belfast, UK}{}{
   Developed RESTful web services in Scala, using the \code{cats}/\code{cats-effect} framework and Akka HTTP.
@@ -186,6 +191,7 @@
   and the world of FP in Scala.
 }
 
+\needspace{5\baselineskip}
 \cventry{May 2013-Nov 2017}{Senior Software Engineer}{NantHealth}{Belfast, UK}{}{}
 \cventry{}{Software Engineer}{NantHealth}{Belfast, UK}{}{
   Responsible for designing, unit testing, implementing and deploying a variety of applications, such as:
