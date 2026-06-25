@@ -1,0 +1,4 @@
+{"rule":"GITHUB","sentence":"^\\QCurriculum Vitae Diogo Castro [mobile]+351 914424559 \\E(?:Dummy|Ina|Jimmy-|Dummy-|Maniquí-|Maniquíes-|Atrapa-|Dummy\\+|Dummy's\\+)[0-9]+\\Q diogocastro.com [github]dcastro [homepage]socials [diogocastro.com/blog]diogocastro.com/blog\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qcasual blue\\E$"}
+{"rule":"COMMA_COMPOUND_SENTENCE","sentence":"^\\QI also like teaching and I'm a big believer in \"paying it forward\".\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qlinear-locks https://hackage.haskell.org/package/linear-locks Leverages Haskell's Linear Types to provide locking primitives that are statically guaranteed to be deadlock-free.\\E$"}

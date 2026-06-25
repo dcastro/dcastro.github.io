@@ -19,3 +19,15 @@ release-build:
 # Build latex diagrams. Install `pdflatex` and `pdf2svg` first.
 latex:
     (cd img/diagrams && pdflatex -shell-escape -interaction=nonstopmode kind-system.tex)
+
+cv:
+    pdflatex \
+        -shell-escape \
+        -synctex=1 \
+        -interaction=nonstopmode \
+        -file-line-error \
+        -recorder \
+        -output-directory="out" \
+        "./assets/cv/cv-diogocastro.tex"
+    mv out/cv-diogocastro.pdf ./assets/cv/cv-diogocastro.pdf
+    mv out/cv-diogocastro.synctex.gz ./assets/cv/cv-diogocastro.synctex.gz
